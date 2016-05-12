@@ -6,7 +6,8 @@ target 'Shhwift' do
   pod 'SwiftyJSON', '~> 2.3'
 
   target 'ShhwiftTests' do
-    pod 'Quick', '0.9'
-    pod 'Nimble', '4.0'
+    pod 'Quick', '~> 0.9'
+    pod 'Nimble', '~> 4.0'
+    pod 'Mockingjay', '~> 1.1.1'
   end
 end
