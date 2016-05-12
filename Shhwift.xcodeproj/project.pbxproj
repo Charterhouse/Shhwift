@@ -7,9 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1F5051891C2E6F069B0F1632 /* Pods_Shhwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 239DCC781986C450081F3FD2 /* Pods_Shhwift.framework */; };
 		5C2F9D5B1CE4CFB200C3F263 /* Shhwift.h in Headers */ = {isa = PBXBuildFile; fileRef = 5C2F9D5A1CE4CFB200C3F263 /* Shhwift.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5C2F9D621CE4CFB200C3F263 /* Shhwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C2F9D571CE4CFB200C3F263 /* Shhwift.framework */; };
 		5C2F9D671CE4CFB200C3F263 /* ShhwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C2F9D661CE4CFB200C3F263 /* ShhwiftTests.swift */; };
+		C7D7C130504428F244E5387C /* Pods_Shhwift_ShhwiftTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9DD085AA2F60F02D66A3134 /* Pods_Shhwift_ShhwiftTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -23,12 +25,18 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		239DCC781986C450081F3FD2 /* Pods_Shhwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Shhwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2B62318F2F1AF080B250E745 /* Pods-Shhwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Shhwift.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Shhwift/Pods-Shhwift.debug.xcconfig"; sourceTree = "<group>"; };
 		5C2F9D571CE4CFB200C3F263 /* Shhwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Shhwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C2F9D5A1CE4CFB200C3F263 /* Shhwift.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Shhwift.h; sourceTree = "<group>"; };
 		5C2F9D5C1CE4CFB200C3F263 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5C2F9D611CE4CFB200C3F263 /* ShhwiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ShhwiftTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C2F9D661CE4CFB200C3F263 /* ShhwiftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShhwiftTests.swift; sourceTree = "<group>"; };
 		5C2F9D681CE4CFB200C3F263 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BB38F8CB8DDF4846332821FC /* Pods-Shhwift-ShhwiftTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Shhwift-ShhwiftTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Shhwift-ShhwiftTests/Pods-Shhwift-ShhwiftTests.release.xcconfig"; sourceTree = "<group>"; };
+		C4D616F10B642DBBFE9BE573 /* Pods-Shhwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Shhwift.release.xcconfig"; path = "Pods/Target Support Files/Pods-Shhwift/Pods-Shhwift.release.xcconfig"; sourceTree = "<group>"; };
+		D46627AD1177AF355B1354D1 /* Pods-Shhwift-ShhwiftTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Shhwift-ShhwiftTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Shhwift-ShhwiftTests/Pods-Shhwift-ShhwiftTests.debug.xcconfig"; sourceTree = "<group>"; };
+		E9DD085AA2F60F02D66A3134 /* Pods_Shhwift_ShhwiftTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Shhwift_ShhwiftTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -36,6 +44,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1F5051891C2E6F069B0F1632 /* Pods_Shhwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -44,18 +53,32 @@
 			buildActionMask = 2147483647;
 			files = (
 				5C2F9D621CE4CFB200C3F263 /* Shhwift.framework in Frameworks */,
+				C7D7C130504428F244E5387C /* Pods_Shhwift_ShhwiftTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		48F282183FB5FE2E460D0521 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2B62318F2F1AF080B250E745 /* Pods-Shhwift.debug.xcconfig */,
+				C4D616F10B642DBBFE9BE573 /* Pods-Shhwift.release.xcconfig */,
+				D46627AD1177AF355B1354D1 /* Pods-Shhwift-ShhwiftTests.debug.xcconfig */,
+				BB38F8CB8DDF4846332821FC /* Pods-Shhwift-ShhwiftTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		5C2F9D4D1CE4CFB200C3F263 = {
 			isa = PBXGroup;
 			children = (
 				5C2F9D591CE4CFB200C3F263 /* Shhwift */,
 				5C2F9D651CE4CFB200C3F263 /* ShhwiftTests */,
 				5C2F9D581CE4CFB200C3F263 /* Products */,
+				48F282183FB5FE2E460D0521 /* Pods */,
+				C5DC43BB2BFBF47FBE049171 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -86,6 +109,15 @@
 			path = ShhwiftTests;
 			sourceTree = "<group>";
 		};
+		C5DC43BB2BFBF47FBE049171 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				239DCC781986C450081F3FD2 /* Pods_Shhwift.framework */,
+				E9DD085AA2F60F02D66A3134 /* Pods_Shhwift_ShhwiftTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -104,10 +136,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5C2F9D6B1CE4CFB200C3F263 /* Build configuration list for PBXNativeTarget "Shhwift" */;
 			buildPhases = (
+				15FB8403F903FACC3BAD79E8 /* 📦 Check Pods Manifest.lock */,
 				5C2F9D521CE4CFB200C3F263 /* Sources */,
 				5C2F9D531CE4CFB200C3F263 /* Frameworks */,
 				5C2F9D541CE4CFB200C3F263 /* Headers */,
 				5C2F9D551CE4CFB200C3F263 /* Resources */,
+				3D8941F9AA3005B47282659E /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -122,9 +156,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5C2F9D6E1CE4CFB200C3F263 /* Build configuration list for PBXNativeTarget "ShhwiftTests" */;
 			buildPhases = (
+				E529238763CEE906AE5116B9 /* 📦 Check Pods Manifest.lock */,
 				5C2F9D5D1CE4CFB200C3F263 /* Sources */,
 				5C2F9D5E1CE4CFB200C3F263 /* Frameworks */,
 				5C2F9D5F1CE4CFB200C3F263 /* Resources */,
+				7219ED4AFCA5B04CF197B716 /* 📦 Embed Pods Frameworks */,
+				2A2C5E57C3D94449E9DF619D /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -188,6 +225,84 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		15FB8403F903FACC3BAD79E8 /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		2A2C5E57C3D94449E9DF619D /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Shhwift-ShhwiftTests/Pods-Shhwift-ShhwiftTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3D8941F9AA3005B47282659E /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Shhwift/Pods-Shhwift-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7219ED4AFCA5B04CF197B716 /* 📦 Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Shhwift-ShhwiftTests/Pods-Shhwift-ShhwiftTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E529238763CEE906AE5116B9 /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		5C2F9D521CE4CFB200C3F263 /* Sources */ = {
@@ -309,6 +424,7 @@
 		};
 		5C2F9D6C1CE4CFB200C3F263 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2B62318F2F1AF080B250E745 /* Pods-Shhwift.debug.xcconfig */;
 			buildSettings = {
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -325,6 +441,7 @@
 		};
 		5C2F9D6D1CE4CFB200C3F263 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C4D616F10B642DBBFE9BE573 /* Pods-Shhwift.release.xcconfig */;
 			buildSettings = {
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -341,6 +458,7 @@
 		};
 		5C2F9D6F1CE4CFB200C3F263 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D46627AD1177AF355B1354D1 /* Pods-Shhwift-ShhwiftTests.debug.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = ShhwiftTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -351,6 +469,7 @@
 		};
 		5C2F9D701CE4CFB200C3F263 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BB38F8CB8DDF4846332821FC /* Pods-Shhwift-ShhwiftTests.release.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = ShhwiftTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -378,6 +497,7 @@
 				5C2F9D6D1CE4CFB200C3F263 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5C2F9D6E1CE4CFB200C3F263 /* Build configuration list for PBXNativeTarget "ShhwiftTests" */ = {
 			isa = XCConfigurationList;
@@ -386,6 +506,7 @@
 				5C2F9D701CE4CFB200C3F263 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
