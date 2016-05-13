@@ -6,23 +6,20 @@ import Alamofire
 
 class ShhSpec: QuickSpec {
     override func spec () {
-        it("can be created") {
-            _ = Shh()
-        }
 
-        it("can mock http requests") {
-            let body = ["result": "42.0"]
+        it("requests version") {
             self.stub(
-                http(.GET, uri: "http://some.ethereum.node:8545"),
-                builder: json(body)
+                http(.POST, uri:"http://some.ethereum.node:8545"),
+                builder: json(["result": "42.0"])
             )
 
             waitUntil { done in
-                Alamofire.request(.GET, "http://some.ethereum.node:8545").responseJSON { response in
-                    expect(response.result.error).to(beNil())
+                Shh(url: "http://some.ethereum.node:8545").version { version, error in
+                    expect(version).to(equal("42.0"))
                     done()
                 }
             }
+
         }
     }
 }
