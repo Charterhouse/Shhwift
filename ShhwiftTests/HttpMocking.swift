@@ -1,5 +1,7 @@
 import XCTest
 import Mockingjay
+import SwiftyJSON
+@testable import Shhwift
 
 extension XCTest {
 
@@ -14,5 +16,15 @@ extension XCTest {
 
     func stubRequests(to uri: String, result builder: Builder) {
         self.stub(Mockingjay.uri(uri), builder: builder)
+    }
+}
+
+extension XCTest {
+
+    func interceptJSONRequests(to uri: String, handler: (JSON?)->()) {
+        interceptRequests(to: uri) { request in
+            let json = JSON(data: request.HTTPBodyStream?.readFully())
+            handler(json)
+        }
     }
 }

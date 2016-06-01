@@ -31,11 +31,9 @@ class ShhSpec: QuickSpec {
             it("sends a JSON-RPC 2.0 request") {
                 waitUntil { done in
 
-                    self.interceptRequests(to: url) { request in
-                        let body = request.HTTPBodyStream?.readFully()
-                        let jsonrpcVersion = JSON(data: body)?["jsonrpc"].string
+                    self.interceptJSONRequests(to: url) { json in
+                        expect(json?["jsonrpc"]).to(equal("2.0"))
 
-                        expect(jsonrpcVersion).to(equal("2.0"))
                         done()
                     }
 
