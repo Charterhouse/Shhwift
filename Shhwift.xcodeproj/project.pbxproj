@@ -10,6 +10,7 @@
 		1F5051891C2E6F069B0F1632 /* Pods_Shhwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 239DCC781986C450081F3FD2 /* Pods_Shhwift.framework */; };
 		5C2F9D5B1CE4CFB200C3F263 /* Shhwift.h in Headers */ = {isa = PBXBuildFile; fileRef = 5C2F9D5A1CE4CFB200C3F263 /* Shhwift.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5C2F9D621CE4CFB200C3F263 /* Shhwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C2F9D571CE4CFB200C3F263 /* Shhwift.framework */; };
+		5C57F44D1CFF07AB001F3C60 /* NSInputStream+ReadFully.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C57F44C1CFF07AB001F3C60 /* NSInputStream+ReadFully.swift */; };
 		5C7B5EE11CF0E58600F622EE /* HttpMocking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C7B5EE01CF0E58600F622EE /* HttpMocking.swift */; };
 		5C9076C81CE4D32C0012AD50 /* ShhSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9076C71CE4D32C0012AD50 /* ShhSpec.swift */; };
 		5C9076CA1CE4D37B0012AD50 /* Shh.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9076C91CE4D37B0012AD50 /* Shh.swift */; };
@@ -34,6 +35,7 @@
 		5C2F9D5C1CE4CFB200C3F263 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5C2F9D611CE4CFB200C3F263 /* ShhwiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ShhwiftTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C2F9D681CE4CFB200C3F263 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5C57F44C1CFF07AB001F3C60 /* NSInputStream+ReadFully.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSInputStream+ReadFully.swift"; sourceTree = "<group>"; };
 		5C7B5EE01CF0E58600F622EE /* HttpMocking.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpMocking.swift; sourceTree = "<group>"; };
 		5C9076C61CE4D32B0012AD50 /* ShhwiftTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ShhwiftTests-Bridging-Header.h"; sourceTree = "<group>"; };
 		5C9076C71CE4D32C0012AD50 /* ShhSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShhSpec.swift; sourceTree = "<group>"; };
@@ -113,6 +115,7 @@
 				5C9076C71CE4D32C0012AD50 /* ShhSpec.swift */,
 				5C9076C61CE4D32B0012AD50 /* ShhwiftTests-Bridging-Header.h */,
 				5C7B5EE01CF0E58600F622EE /* HttpMocking.swift */,
+				5C57F44C1CFF07AB001F3C60 /* NSInputStream+ReadFully.swift */,
 			);
 			path = ShhwiftTests;
 			sourceTree = "<group>";
@@ -327,6 +330,7 @@
 			files = (
 				5C7B5EE11CF0E58600F622EE /* HttpMocking.swift in Sources */,
 				5C9076C81CE4D32C0012AD50 /* ShhSpec.swift in Sources */,
+				5C57F44D1CFF07AB001F3C60 /* NSInputStream+ReadFully.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
