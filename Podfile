@@ -8,6 +8,6 @@ target 'Shhwift' do
   target 'ShhwiftTests' do
     pod 'Quick', '~> 0.9'
     pod 'Nimble', '~> 4.0'
-    pod 'Mockingjay', '~> 1.1.1'
+    pod 'Mockingjay', '~> 1.2.2'
   end
 end
