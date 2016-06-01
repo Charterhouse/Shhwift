@@ -1,25 +1,45 @@
 import Quick
 import Nimble
 import Shhwift
+import SwiftyJSON
 import Mockingjay
-import Alamofire
 
 class ShhSpec: QuickSpec {
     override func spec () {
 
-        it("requests version") {
-            self.stub(
-                http(.POST, uri:"http://some.ethereum.node:8545"),
-                builder: json(["result": "42.0"])
-            )
+        let url = "http://some.ethereum.node:8545"
+        var shh: Shh!
 
-            waitUntil { done in
-                Shh(url: "http://some.ethereum.node:8545").version { version, error in
-                    expect(version).to(equal("42.0"))
-                    done()
+        beforeEach {
+            shh = Shh(url: url)
+        }
+
+        describe("version") {
+
+            it("connects to the correct url") {
+
+                waitUntil { done in
+
+                    self.interceptRequests { request in
+                        expect(request.URL).to(equal(NSURL(string: url)))
+                        done()
+                    }
+
+                    shh.version { _, _ in return }
                 }
             }
 
+            it("returns the correct result") {
+
+                self.stubRequests(result: json(["result": "42.0"]))
+
+                waitUntil { done in
+                    shh.version { version, _ in
+                        expect(version).to(equal("42.0"))
+                        done()
+                    }
+                }
+            }
         }
     }
 }
