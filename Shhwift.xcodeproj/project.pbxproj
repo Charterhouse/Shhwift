@@ -156,6 +156,7 @@
 				5C2F9D541CE4CFB200C3F263 /* Headers */,
 				5C2F9D551CE4CFB200C3F263 /* Resources */,
 				3D8941F9AA3005B47282659E /* 📦 Copy Pods Resources */,
+				5CDE2A651CFF0FDF00D01C16 /* Swift Lint */,
 			);
 			buildRules = (
 			);
@@ -284,6 +285,21 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Shhwift/Pods-Shhwift-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5CDE2A651CFF0FDF00D01C16 /* Swift Lint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Swift Lint";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
 			showEnvVarsInLog = 0;
 		};
 		7219ED4AFCA5B04CF197B716 /* 📦 Embed Pods Frameworks */ = {
