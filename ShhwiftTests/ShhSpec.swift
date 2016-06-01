@@ -36,7 +36,7 @@ class ShhSpec: QuickSpec {
                         let jsonrpcVersion = JSON(data: body)?["jsonrpc"].string
 
                         expect(jsonrpcVersion).to(equal("2.0"))
-                        done();
+                        done()
                     }
 
                     shh.version { _, _ in return }

@@ -16,8 +16,7 @@ public struct Shh {
         ]
 
         func completionHandler(response: Response<AnyObject, NSError>) {
-            if let result = JSON(response.result.value)?["result"].string
-            {
+            if let result = JSON(response.result.value)?["result"].string {
                 callback(version: result, error: nil)
             }
         }
