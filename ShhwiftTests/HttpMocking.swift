@@ -1,7 +1,7 @@
 import XCTest
 import Mockingjay
 import SwiftyJSON
-@testable import Shhwift
+import Shhwift
 
 extension XCTest {
 

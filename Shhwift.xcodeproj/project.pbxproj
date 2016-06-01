@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1F5051891C2E6F069B0F1632 /* Pods_Shhwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 239DCC781986C450081F3FD2 /* Pods_Shhwift.framework */; };
+		5C017AE51CFF1DB70081F28F /* JSON+FailableInit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CDE2A631CFF0BFD00D01C16 /* JSON+FailableInit.swift */; };
 		5C2F9D5B1CE4CFB200C3F263 /* Shhwift.h in Headers */ = {isa = PBXBuildFile; fileRef = 5C2F9D5A1CE4CFB200C3F263 /* Shhwift.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5C2F9D621CE4CFB200C3F263 /* Shhwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C2F9D571CE4CFB200C3F263 /* Shhwift.framework */; };
 		5C57F44D1CFF07AB001F3C60 /* NSInputStream+ReadFully.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C57F44C1CFF07AB001F3C60 /* NSInputStream+ReadFully.swift */; };
@@ -80,14 +81,23 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		5C017AE41CFF1DA10081F28F /* SwiftyJSONExtensions */ = {
+			isa = PBXGroup;
+			children = (
+				5CDE2A631CFF0BFD00D01C16 /* JSON+FailableInit.swift */,
+			);
+			path = SwiftyJSONExtensions;
+			sourceTree = "<group>";
+		};
 		5C2F9D4D1CE4CFB200C3F263 = {
 			isa = PBXGroup;
 			children = (
+				C5DC43BB2BFBF47FBE049171 /* Frameworks */,
+				48F282183FB5FE2E460D0521 /* Pods */,
+				5C2F9D581CE4CFB200C3F263 /* Products */,
 				5C2F9D591CE4CFB200C3F263 /* Shhwift */,
 				5C2F9D651CE4CFB200C3F263 /* ShhwiftTests */,
-				5C2F9D581CE4CFB200C3F263 /* Products */,
-				48F282183FB5FE2E460D0521 /* Pods */,
-				C5DC43BB2BFBF47FBE049171 /* Frameworks */,
+				5C017AE41CFF1DA10081F28F /* SwiftyJSONExtensions */,
 			);
 			sourceTree = "<group>";
 		};
@@ -103,10 +113,9 @@
 		5C2F9D591CE4CFB200C3F263 /* Shhwift */ = {
 			isa = PBXGroup;
 			children = (
-				5C2F9D5A1CE4CFB200C3F263 /* Shhwift.h */,
 				5C2F9D5C1CE4CFB200C3F263 /* Info.plist */,
 				5C9076C91CE4D37B0012AD50 /* Shh.swift */,
-				5CDE2A631CFF0BFD00D01C16 /* JSON+FailableInit.swift */,
+				5C2F9D5A1CE4CFB200C3F263 /* Shhwift.h */,
 			);
 			path = Shhwift;
 			sourceTree = "<group>";
@@ -114,11 +123,11 @@
 		5C2F9D651CE4CFB200C3F263 /* ShhwiftTests */ = {
 			isa = PBXGroup;
 			children = (
+				5C7B5EE01CF0E58600F622EE /* HttpMocking.swift */,
 				5C2F9D681CE4CFB200C3F263 /* Info.plist */,
+				5C57F44C1CFF07AB001F3C60 /* NSInputStream+ReadFully.swift */,
 				5C9076C71CE4D32C0012AD50 /* ShhSpec.swift */,
 				5C9076C61CE4D32B0012AD50 /* ShhwiftTests-Bridging-Header.h */,
-				5C7B5EE01CF0E58600F622EE /* HttpMocking.swift */,
-				5C57F44C1CFF07AB001F3C60 /* NSInputStream+ReadFully.swift */,
 			);
 			path = ShhwiftTests;
 			sourceTree = "<group>";
@@ -351,6 +360,7 @@
 				5C7B5EE11CF0E58600F622EE /* HttpMocking.swift in Sources */,
 				5C9076C81CE4D32C0012AD50 /* ShhSpec.swift in Sources */,
 				5C57F44D1CFF07AB001F3C60 /* NSInputStream+ReadFully.swift in Sources */,
+				5C017AE51CFF1DB70081F28F /* JSON+FailableInit.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

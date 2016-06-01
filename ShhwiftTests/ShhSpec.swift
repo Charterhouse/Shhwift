@@ -2,7 +2,7 @@ import Quick
 import Nimble
 import Mockingjay
 import SwiftyJSON
-@testable import Shhwift
+import Shhwift
 
 class ShhSpec: QuickSpec {
     override func spec () {
