@@ -15,9 +15,8 @@ public struct Shh {
             "jsonrpc": "2.0"
         ]
 
-        func handleResponse(response: Response<AnyObject, NSError>) {
-            if let json = response.result.value,
-                let result = JSON(json)["result"].string
+        func completionHandler(response: Response<AnyObject, NSError>) {
+            if let result = JSON(response.result.value)?["result"].string
             {
                 callback(version: result, error: nil)
             }
@@ -25,7 +24,7 @@ public struct Shh {
 
         Alamofire
             .request(.POST, url, parameters: request, encoding: .JSON)
-            .responseJSON(completionHandler: handleResponse)
+            .responseJSON(completionHandler: completionHandler)
 
     }
 

@@ -14,6 +14,7 @@
 		5C7B5EE11CF0E58600F622EE /* HttpMocking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C7B5EE01CF0E58600F622EE /* HttpMocking.swift */; };
 		5C9076C81CE4D32C0012AD50 /* ShhSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9076C71CE4D32C0012AD50 /* ShhSpec.swift */; };
 		5C9076CA1CE4D37B0012AD50 /* Shh.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9076C91CE4D37B0012AD50 /* Shh.swift */; };
+		5CDE2A641CFF0BFD00D01C16 /* JSON+FailableInit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CDE2A631CFF0BFD00D01C16 /* JSON+FailableInit.swift */; };
 		C7D7C130504428F244E5387C /* Pods_Shhwift_ShhwiftTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9DD085AA2F60F02D66A3134 /* Pods_Shhwift_ShhwiftTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -40,6 +41,7 @@
 		5C9076C61CE4D32B0012AD50 /* ShhwiftTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ShhwiftTests-Bridging-Header.h"; sourceTree = "<group>"; };
 		5C9076C71CE4D32C0012AD50 /* ShhSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShhSpec.swift; sourceTree = "<group>"; };
 		5C9076C91CE4D37B0012AD50 /* Shh.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Shh.swift; sourceTree = "<group>"; };
+		5CDE2A631CFF0BFD00D01C16 /* JSON+FailableInit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "JSON+FailableInit.swift"; sourceTree = "<group>"; };
 		BB38F8CB8DDF4846332821FC /* Pods-Shhwift-ShhwiftTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Shhwift-ShhwiftTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Shhwift-ShhwiftTests/Pods-Shhwift-ShhwiftTests.release.xcconfig"; sourceTree = "<group>"; };
 		C4D616F10B642DBBFE9BE573 /* Pods-Shhwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Shhwift.release.xcconfig"; path = "Pods/Target Support Files/Pods-Shhwift/Pods-Shhwift.release.xcconfig"; sourceTree = "<group>"; };
 		D46627AD1177AF355B1354D1 /* Pods-Shhwift-ShhwiftTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Shhwift-ShhwiftTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Shhwift-ShhwiftTests/Pods-Shhwift-ShhwiftTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -104,6 +106,7 @@
 				5C2F9D5A1CE4CFB200C3F263 /* Shhwift.h */,
 				5C2F9D5C1CE4CFB200C3F263 /* Info.plist */,
 				5C9076C91CE4D37B0012AD50 /* Shh.swift */,
+				5CDE2A631CFF0BFD00D01C16 /* JSON+FailableInit.swift */,
 			);
 			path = Shhwift;
 			sourceTree = "<group>";
@@ -321,6 +324,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5C9076CA1CE4D37B0012AD50 /* Shh.swift in Sources */,
+				5CDE2A641CFF0BFD00D01C16 /* JSON+FailableInit.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

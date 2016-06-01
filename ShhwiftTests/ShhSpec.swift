@@ -1,8 +1,8 @@
 import Quick
 import Nimble
-import Shhwift
-import SwiftyJSON
 import Mockingjay
+import SwiftyJSON
+@testable import Shhwift
 
 class ShhSpec: QuickSpec {
     override func spec () {
@@ -32,15 +32,10 @@ class ShhSpec: QuickSpec {
                 waitUntil { done in
 
                     self.interceptRequests(to: url) { request in
-                        guard let body = request.HTTPBodyStream?.readFully() else {
-                            return
-                        }
+                        let body = request.HTTPBodyStream?.readFully()
+                        let jsonrpcVersion = JSON(data: body)?["jsonrpc"].string
 
-                        guard let jsonrpc = JSON(data: body)["jsonrpc"].string else {
-                            return
-                        }
-
-                        expect(jsonrpc).to(equal("2.0"))
+                        expect(jsonrpcVersion).to(equal("2.0"))
                         done();
                     }
 
