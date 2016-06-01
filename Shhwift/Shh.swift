@@ -9,14 +9,25 @@ public struct Shh {
         self.url = url
     }
 
-    public func version(callback: (version: String?, error: ErrorType?) -> ()) {
-        Alamofire.request(.POST, "http://some.ethereum.node:8545").responseJSON { response in
-            if let value = response.result.value {
-                let json = JSON(value)
-                if let result = json["result"].string {
-                    callback(version: result, error: nil)
-                }
+    public func version(callback: VersionCallback) {
+
+        let request = [
+            "jsonrpc": "2.0"
+        ]
+
+        func handleResponse(response: Response<AnyObject, NSError>) {
+            if let json = response.result.value,
+                let result = JSON(json)["result"].string
+            {
+                callback(version: result, error: nil)
             }
         }
+
+        Alamofire
+            .request(.POST, url, parameters: request, encoding: .JSON)
+            .responseJSON(completionHandler: handleResponse)
+
     }
+
+    public typealias VersionCallback = (version: String?, error: ErrorType?)->()
 }

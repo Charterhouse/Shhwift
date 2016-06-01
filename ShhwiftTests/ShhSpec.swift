@@ -28,8 +28,27 @@ class ShhSpec: QuickSpec {
                 }
             }
 
-            it("returns the correct result") {
+            it("sends a JSON-RPC 2.0 request") {
+                waitUntil { done in
 
+                    self.interceptRequests(to: url) { request in
+                        guard let body = request.HTTPBodyStream?.readFully() else {
+                            return
+                        }
+
+                        guard let jsonrpc = JSON(data: body)["jsonrpc"].string else {
+                            return
+                        }
+
+                        expect(jsonrpc).to(equal("2.0"))
+                        done();
+                    }
+
+                    shh.version { _, _ in return }
+                }
+            }
+
+            it("returns the correct result") {
                 self.stubRequests(to: url, result: json(["result": "42.0"]))
 
                 waitUntil { done in
