@@ -33,7 +33,30 @@ class ShhSpec: QuickSpec {
 
                     self.interceptJSONRequests(to: url) { json in
                         expect(json?["jsonrpc"]).to(equal("2.0"))
+                        done()
+                    }
 
+                    shh.version { _, _ in return }
+                }
+            }
+
+            it("calls the shh_version JSON-RPC method") {
+                waitUntil { done in
+
+                    self.interceptJSONRequests(to: url) { json in
+                        expect(json?["method"]).to(equal("shh_version"))
+                        done()
+                    }
+
+                    shh.version { _, _ in return }
+                }
+            }
+
+            it("includes a JSON-RPC request id") {
+                waitUntil { done in
+
+                    self.interceptJSONRequests(to: url) { json in
+                        expect(json?["id"]).toNot(beNil())
                         done()
                     }
 

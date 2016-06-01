@@ -12,7 +12,9 @@ public struct Shh {
     public func version(callback: VersionCallback) {
 
         let request = [
-            "jsonrpc": "2.0"
+            "jsonrpc": "2.0",
+            "method": "shh_version",
+            "id": 0
         ]
 
         func completionHandler(response: Response<AnyObject, NSError>) {
