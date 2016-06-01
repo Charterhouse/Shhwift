@@ -17,10 +17,9 @@ class ShhSpec: QuickSpec {
         describe("version") {
 
             it("connects to the correct url") {
-
                 waitUntil { done in
 
-                    self.interceptRequests { request in
+                    self.interceptRequests(to: url) { request in
                         expect(request.URL).to(equal(NSURL(string: url)))
                         done()
                     }
@@ -31,9 +30,10 @@ class ShhSpec: QuickSpec {
 
             it("returns the correct result") {
 
-                self.stubRequests(result: json(["result": "42.0"]))
+                self.stubRequests(to: url, result: json(["result": "42.0"]))
 
                 waitUntil { done in
+
                     shh.version { version, _ in
                         expect(version).to(equal("42.0"))
                         done()
