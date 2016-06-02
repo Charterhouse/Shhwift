@@ -10,4 +10,6 @@ target 'Shhwift' do
     pod 'Nimble', '~> 4.0'
     pod 'Mockingjay', '~> 1.2.2'
   end
+
+  target 'ShhwiftDemo'
 end
