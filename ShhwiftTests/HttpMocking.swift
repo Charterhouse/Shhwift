@@ -6,12 +6,12 @@ import Shhwift
 extension XCTest {
 
     func interceptRequests(to uri: String, handler: (NSURLRequest)->()) {
-        func matcher(request: NSURLRequest) -> Bool {
+        func builder(request: NSURLRequest) -> Response {
             handler(request)
-            return Mockingjay.uri(uri)(request: request)
+            return http()(request: request)
         }
 
-        self.stub(matcher, builder: http())
+        self.stub(Mockingjay.uri(uri), builder: builder)
     }
 
     func stubRequests(to uri: String, result builder: Builder) {
