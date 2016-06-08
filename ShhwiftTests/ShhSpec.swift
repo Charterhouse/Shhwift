@@ -68,7 +68,6 @@ class ShhSpec: QuickSpec {
                 self.stubRequests(to: url, result: json(["result": "42.0"]))
 
                 waitUntil { done in
-
                     shh.version { version, _ in
                         expect(version).to(equal("42.0"))
                         done()
@@ -86,13 +85,16 @@ class ShhSpec: QuickSpec {
                 self.stubRequests(to: url, result: failure(connectionError))
 
                 waitUntil { done in
-
                     shh.version { _, error in
-                        expect(error?._domain) == connectionError.domain
-                        expect(error?._code) == connectionError.code
+
+                        let expectedError = ShhError.HttpFailure(
+                            cause: connectionError
+                        )
+
+                        expect(error) == expectedError
+
                         done()
                     }
-
                 }
             }
 
@@ -100,9 +102,51 @@ class ShhSpec: QuickSpec {
                 self.stubRequests(to: url, result: json([], status:404))
 
                 waitUntil { done in
-
                     shh.version { _, error in
+
                         expect(error).toNot(beNil())
+
+                        done()
+                    }
+                }
+            }
+
+            it("notifies about JSON-RPC errors") {
+                let code = -12345
+                let message = "Something went wrong"
+
+                self.stubRequests(
+                    to: url,
+                    result: json(["error": ["code": code, "message": message]])
+                )
+
+                waitUntil { done in
+                    shh.version { _, error in
+
+                        let expectedError = ShhError.JsonRpcFailure(
+                            code: -12345,
+                            message: message
+                        )
+
+                        expect(error) == expectedError
+
+                        done()
+                    }
+                }
+            }
+
+            it("notifies when result is not a string") {
+                self.stubRequests(to: url, result: json([]))
+
+                waitUntil { done in
+                    shh.version { _, error in
+
+                        let expectedError = ShhError.ShhFailure(
+                            message: "Result is not a string"
+                        )
+
+                        expect(error) == expectedError
+
                         done()
                     }
                 }

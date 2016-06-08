@@ -18,14 +18,33 @@ public struct Shh {
         ]
 
         func completionHandler(response: Response<AnyObject, NSError>) {
-            guard response.result.error == nil else {
-                callback(version: nil, error: response.result.error)
+            if let error = response.result.error {
+                callback(
+                    version: nil,
+                    error: ShhError.HttpFailure(cause: error)
+                )
                 return
             }
 
-            if let result = JSON(response.result.value)?["result"].string {
-                callback(version: result, error: nil)
+            if let error = JSON(response.result.value)?["error"].dictionary {
+                let code = error["code"]?.int ?? 0
+                let message = error["message"]?.string ?? "Unknown Error"
+                callback(
+                    version: nil,
+                    error: ShhError.JsonRpcFailure(code: code, message: message)
+                )
+                return
             }
+
+            guard let result = JSON(response.result.value)?["result"].string else {
+                callback(
+                    version: nil,
+                    error: ShhError.ShhFailure(message: "Result is not a string")
+                )
+                return
+            }
+
+            callback(version: result, error: nil)
         }
 
         Alamofire
@@ -35,5 +54,5 @@ public struct Shh {
 
     }
 
-    public typealias VersionCallback = (version: String?, error: ErrorType?)->()
+    public typealias VersionCallback = (version: String?, error: ShhError?)->()
 }
