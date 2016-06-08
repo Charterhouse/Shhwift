@@ -18,6 +18,11 @@ public struct Shh {
         ]
 
         func completionHandler(response: Response<AnyObject, NSError>) {
+            guard response.result.error == nil else {
+                callback(version: nil, error: response.result.error)
+                return
+            }
+
             if let result = JSON(response.result.value)?["result"].string {
                 callback(version: result, error: nil)
             }
@@ -25,6 +30,7 @@ public struct Shh {
 
         Alamofire
             .request(.POST, url, parameters: request, encoding: .JSON)
+            .validate()
             .responseJSON(completionHandler: completionHandler)
 
     }

@@ -75,6 +75,38 @@ class ShhSpec: QuickSpec {
                     }
                 }
             }
+
+            it("notifies about connection errors") {
+                let connectionError = NSError(
+                    domain: NSURLErrorDomain,
+                    code: NSURLErrorUnknown,
+                    userInfo: nil
+                )
+
+                self.stubRequests(to: url, result: failure(connectionError))
+
+                waitUntil { done in
+
+                    shh.version { _, error in
+                        expect(error?._domain) == connectionError.domain
+                        expect(error?._code) == connectionError.code
+                        done()
+                    }
+
+                }
+            }
+
+            it("notifies about HTTP errors") {
+                self.stubRequests(to: url, result: json([], status:404))
+
+                waitUntil { done in
+
+                    shh.version { _, error in
+                        expect(error).toNot(beNil())
+                        done()
+                    }
+                }
+            }
         }
     }
 }
