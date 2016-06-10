@@ -3,55 +3,28 @@ import SwiftyJSON
 
 public struct Shh {
 
-    let url: String
+    let rpc: JsonRpc
 
     public init(url: String) {
-        self.url = url
+        self.rpc = JsonRpc(url: url)
     }
 
     public func version(callback: VersionCallback) {
+        rpc.call(method: "shh_version") { result, error in
 
-        let request = [
-            "jsonrpc": "2.0",
-            "method": "shh_version",
-            "id": 0
-        ]
-
-        func completionHandler(response: Response<AnyObject, NSError>) {
-            if let error = response.result.error {
-                callback(
-                    version: nil,
-                    error: ShhError.HttpFailure(cause: error)
-                )
+            if let error = error {
+                callback(version: nil, error: .JsonRpcFailed(cause: error))
                 return
             }
 
-            if let error = JSON(response.result.value)?["error"].dictionary {
-                let code = error["code"]?.int ?? 0
-                let message = error["message"]?.string ?? "Unknown Error"
-                callback(
-                    version: nil,
-                    error: ShhError.JsonRpcFailure(code: code, message: message)
-                )
+            guard let version = result?.string else {
+                callback(version: nil, error: .ShhFailed(message: "Result is not a string"))
                 return
             }
 
-            guard let result = JSON(response.result.value)?["result"].string else {
-                callback(
-                    version: nil,
-                    error: ShhError.ShhFailure(message: "Result is not a string")
-                )
-                return
-            }
+            callback(version: version, error: nil)
 
-            callback(version: result, error: nil)
         }
-
-        Alamofire
-            .request(.POST, url, parameters: request, encoding: .JSON)
-            .validate()
-            .responseJSON(completionHandler: completionHandler)
-
     }
 
     public typealias VersionCallback = (version: String?, error: ShhError?)->()

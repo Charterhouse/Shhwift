@@ -84,15 +84,13 @@ class ShhSpec: QuickSpec {
 
                 self.stubRequests(to: url, result: failure(connectionError))
 
+                let expectedError = ShhError.JsonRpcFailed(cause:
+                    .HttpFailed(cause: connectionError)
+                )
+
                 waitUntil { done in
                     shh.version { _, error in
-
-                        let expectedError = ShhError.HttpFailure(
-                            cause: connectionError
-                        )
-
                         expect(error) == expectedError
-
                         done()
                     }
                 }
@@ -103,9 +101,7 @@ class ShhSpec: QuickSpec {
 
                 waitUntil { done in
                     shh.version { _, error in
-
                         expect(error).toNot(beNil())
-
                         done()
                     }
                 }
@@ -120,16 +116,13 @@ class ShhSpec: QuickSpec {
                     result: json(["error": ["code": code, "message": message]])
                 )
 
+                let expectedError = ShhError.JsonRpcFailed(cause:
+                    .CallFailed(code: -12345, message:message)
+                )
+
                 waitUntil { done in
                     shh.version { _, error in
-
-                        let expectedError = ShhError.JsonRpcFailure(
-                            code: -12345,
-                            message: message
-                        )
-
                         expect(error) == expectedError
-
                         done()
                     }
                 }
@@ -140,13 +133,10 @@ class ShhSpec: QuickSpec {
 
                 waitUntil { done in
                     shh.version { _, error in
-
-                        let expectedError = ShhError.ShhFailure(
+                        let expectedError = ShhError.ShhFailed(
                             message: "Result is not a string"
                         )
-
                         expect(error) == expectedError
-
                         done()
                     }
                 }
