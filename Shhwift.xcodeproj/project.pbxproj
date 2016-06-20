@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1F5051891C2E6F069B0F1632 /* Pods_Shhwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 239DCC781986C450081F3FD2 /* Pods_Shhwift.framework */; };
+		4DEC99481D182F96006F18A5 /* JsonRpcSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DEC99471D182F96006F18A5 /* JsonRpcSpec.swift */; };
 		5C017AE51CFF1DB70081F28F /* JSON+FailableInit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CDE2A631CFF0BFD00D01C16 /* JSON+FailableInit.swift */; };
 		5C0E9B6E1D083C8000CA98DC /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C0E9B6D1D083C8000CA98DC /* Errors.swift */; };
 		5C1C9D091D0B0B43009B4540 /* JsonRpc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C1C9D081D0B0B43009B4540 /* JsonRpc.swift */; };
@@ -49,6 +50,7 @@
 		239DCC781986C450081F3FD2 /* Pods_Shhwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Shhwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		23F4FB497CD276B100B873DA /* Pods_Shhwift_ShhwiftDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Shhwift_ShhwiftDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B62318F2F1AF080B250E745 /* Pods-Shhwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Shhwift.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Shhwift/Pods-Shhwift.debug.xcconfig"; sourceTree = "<group>"; };
+		4DEC99471D182F96006F18A5 /* JsonRpcSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JsonRpcSpec.swift; sourceTree = "<group>"; };
 		5C0E9B6D1D083C8000CA98DC /* Errors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Errors.swift; sourceTree = "<group>"; };
 		5C1C9D081D0B0B43009B4540 /* JsonRpc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JsonRpc.swift; sourceTree = "<group>"; };
 		5C2F9D571CE4CFB200C3F263 /* Shhwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Shhwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -171,6 +173,7 @@
 				5C57F44C1CFF07AB001F3C60 /* NSInputStream+ReadFully.swift */,
 				5C9076C71CE4D32C0012AD50 /* ShhSpec.swift */,
 				5C9076C61CE4D32B0012AD50 /* ShhwiftTests-Bridging-Header.h */,
+				4DEC99471D182F96006F18A5 /* JsonRpcSpec.swift */,
 			);
 			path = ShhwiftTests;
 			sourceTree = "<group>";
@@ -497,6 +500,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4DEC99481D182F96006F18A5 /* JsonRpcSpec.swift in Sources */,
 				5C7B5EE11CF0E58600F622EE /* HttpMocking.swift in Sources */,
 				5C9076C81CE4D32C0012AD50 /* ShhSpec.swift in Sources */,
 				5C57F44D1CFF07AB001F3C60 /* NSInputStream+ReadFully.swift in Sources */,
