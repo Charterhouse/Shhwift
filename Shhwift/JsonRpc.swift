@@ -17,27 +17,29 @@ struct JsonRpc {
             "id": 0
         ]
 
+        func success(result: JSON?) {
+            callback(result: result, error: nil)
+        }
+
+        func failure(error: JsonRpcError) {
+            callback(result: nil, error: error)
+        }
+
         func completionHandler(response: Response<AnyObject, NSError>) {
             if let error = response.result.error {
-                callback(
-                    result: nil,
-                    error: JsonRpcError.HttpFailed(cause: error)
-                )
+                failure(.HttpFailed(cause: error))
                 return
             }
 
             if let error = JSON(response.result.value)?["error"].dictionary {
                 let code = error["code"]?.int ?? 0
                 let message = error["message"]?.string ?? "Unknown Error"
-                callback(
-                    result: nil,
-                    error: JsonRpcError.CallFailed(code: code, message: message)
-                )
+                failure(.CallFailed(code: code, message: message))
                 return
             }
 
             let result = JSON(response.result.value)?["result"]
-            callback(result: result, error: nil)
+            success(result)
         }
 
         Alamofire

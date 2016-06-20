@@ -10,20 +10,28 @@ public struct Shh {
     }
 
     public func version(callback: VersionCallback) {
+
+        func failure(error: ShhError) {
+            callback(version: nil, error: error)
+        }
+
+        func success(version: String) {
+            callback(version: version, error: nil)
+        }
+
         rpc.call(method: "shh_version") { result, error in
 
             if let error = error {
-                callback(version: nil, error: .JsonRpcFailed(cause: error))
+                failure(.JsonRpcFailed(cause: error))
                 return
             }
 
             guard let version = result?.string else {
-                callback(version: nil, error: .ShhFailed(message: "Result is not a string"))
+                failure(.ShhFailed(message: "Result is not a string"))
                 return
             }
 
-            callback(version: version, error: nil)
-
+            success(version)
         }
     }
 
