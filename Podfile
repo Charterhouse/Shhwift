@@ -4,6 +4,7 @@ use_frameworks!
 target 'Shhwift' do
   pod 'Alamofire', '~> 3.4'
   pod 'SwiftyJSON', '~> 2.3'
+  pod 'NSData+FastHex', '~> 1.0'
 
   target 'ShhwiftTests' do
     pod 'Quick', '~> 0.9'
