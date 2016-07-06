@@ -35,5 +35,17 @@ public struct Shh {
         }
     }
 
+    public func post(from sender: Identity? = nil, callback: PostCallback) {
+
+        var post = [String: String]()
+
+        if let sender = sender {
+            post["from"] = sender.asHexString
+        }
+
+        rpc.call(method: "shh_post", parameters: JSON([post])) { _, _ in }
+    }
+
     public typealias VersionCallback = (version: String?, error: ShhError?)->()
+    public typealias PostCallback = (success: Bool?, error: ShhError?) -> ()
 }

@@ -64,5 +64,34 @@ class ShhSpec: QuickSpec {
                 }
             }
         }
+
+        describe("post") {
+
+            it("calls the shh_post JSON-RPC method") {
+                waitUntil { done in
+
+                    self.interceptJSONRequests(to: url) { json in
+                        expect(json?["method"]).to(equal("shh_post"))
+                        done()
+                    }
+
+                    shh.post { _, _ in return }
+                }
+            }
+
+            it("adds the sender") {
+                let sender = Identity.example
+
+                waitUntil { done in
+
+                    self.interceptJSONRequests(to: url) { json in
+                        expect(json?["params"]) == [["from": sender.asHexString]]
+                        done()
+                    }
+
+                    shh.post(from: sender) { _, _ in return }
+                }
+            }
+        }
     }
 }
