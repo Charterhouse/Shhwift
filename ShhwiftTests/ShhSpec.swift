@@ -68,6 +68,7 @@ class ShhSpec: QuickSpec {
         describe("post") {
 
             let topics = [Topic.example, Topic.example]
+            let payload = Payload.example
 
             it("calls the shh_post JSON-RPC method") {
                 waitUntil { done in
@@ -77,7 +78,8 @@ class ShhSpec: QuickSpec {
                         done()
                     }
 
-                    shh.post(topics: topics) { _, _ in return }
+                    shh.post(topics: topics,
+                             payload: payload) { _, _ in return }
                 }
             }
 
@@ -92,7 +94,9 @@ class ShhSpec: QuickSpec {
                         done()
                     }
 
-                    shh.post(from: sender, topics: topics) { _, _ in return }
+                    shh.post(from: sender,
+                             topics: topics,
+                             payload: payload) { _, _ in return }
                 }
             }
 
@@ -107,7 +111,9 @@ class ShhSpec: QuickSpec {
                         done()
                     }
 
-                    shh.post(to: receiver, topics: topics) { _, _ in return }
+                    shh.post(to: receiver,
+                             topics: topics,
+                             payload: payload) { _, _ in return }
                 }
             }
 
@@ -119,7 +125,21 @@ class ShhSpec: QuickSpec {
                         done()
                     }
 
-                    shh.post(topics: topics) { _, _ in return }
+                    shh.post(topics: topics,
+                             payload: payload) { _, _ in return }
+                }
+            }
+
+            it("adds the payload") {
+                waitUntil { done in
+                    self.interceptJSONRequests(to: url) { json in
+                        let jsonPayload = json?["params"][0]["payload"]
+                        expect(jsonPayload) == JSON(payload.asHexString)
+                        done()
+                    }
+
+                    shh.post(topics: topics,
+                             payload: payload) { _, _ in return }
                 }
             }
         }
