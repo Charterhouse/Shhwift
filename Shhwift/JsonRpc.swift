@@ -9,13 +9,17 @@ struct JsonRpc {
         self.url = url
     }
 
-    func call(method method: String, callback: Callback) {
+    func call(method method: String, parameters: JSON? = nil, callback: Callback) {
 
-        let request: [String: AnyObject] = [
+        var request: [String: AnyObject] = [
             "jsonrpc": "2.0",
             "method": method,
             "id": 0
         ]
+
+        if let parameters = parameters {
+            request["params"] = parameters.object
+        }
 
         func success(result: JSON?) {
             callback(result: result, error: nil)

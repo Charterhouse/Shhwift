@@ -3,6 +3,7 @@
 import Quick
 import Nimble
 import Mockingjay
+import SwiftyJSON
 @testable import Shhwift
 
 class JsonRcpSpec: QuickSpec {
@@ -21,7 +22,7 @@ class JsonRcpSpec: QuickSpec {
                 waitUntil { done in
 
                     self.interceptRequests(to: url) { request in
-                        expect(request.URL).to(equal(NSURL(string: url)))
+                        expect(request.URL) == NSURL(string: url)
                         done()
                     }
 
@@ -33,7 +34,7 @@ class JsonRcpSpec: QuickSpec {
                 waitUntil { done in
 
                     self.interceptJSONRequests(to: url) { json in
-                        expect(json?["jsonrpc"]).to(equal("2.0"))
+                        expect(json?["jsonrpc"]) == "2.0"
                         done()
                     }
 
@@ -57,11 +58,24 @@ class JsonRcpSpec: QuickSpec {
                 waitUntil { done in
 
                     self.interceptJSONRequests(to: url) { json in
-                        expect(json?["method"]).to(equal("some_method"))
+                        expect(json?["method"]) == "some_method"
                         done()
                     }
 
                     jsonRpc.call(method: "some_method") { _, _ in }
+                }
+            }
+
+            it("sends the correct parameters") {
+                let parameters = JSON(["some": "parameter"])
+
+                waitUntil { done in
+                    self.interceptJSONRequests(to: url) { json in
+                        expect(json?["params"]) == parameters
+                        done()
+                    }
+
+                    jsonRpc.call(method: "", parameters: parameters) { _, _ in }
                 }
             }
 
@@ -70,7 +84,7 @@ class JsonRcpSpec: QuickSpec {
 
                 waitUntil { done in
                     jsonRpc.call(method: "") { result, _ in
-                        expect(result).to(equal(42))
+                        expect(result) == 42
                         done()
                     }
                 }
