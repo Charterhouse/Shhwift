@@ -39,6 +39,7 @@ public struct Shh {
                      to receiver: Identity? = nil,
                      topics: [Topic],
                      payload: Payload,
+                     priority: MillisecondsOfProcessingTime,
                      callback: PostCallback) {
 
         var post = [String: AnyObject]()
@@ -53,10 +54,12 @@ public struct Shh {
 
         post["topics"] = topics.map { $0.asHexString }
         post["payload"] = payload.asHexString
+        post["priority"] = priority.asHexString
 
         rpc.call(method: "shh_post", parameters: JSON([post])) { _, _ in }
     }
 
     public typealias VersionCallback = (version: String?, error: ShhError?)->()
     public typealias PostCallback = (success: Bool?, error: ShhError?) -> ()
+    public typealias MillisecondsOfProcessingTime = UInt
 }

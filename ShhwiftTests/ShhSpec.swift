@@ -69,6 +69,7 @@ class ShhSpec: QuickSpec {
 
             let topics = [Topic.example, Topic.example]
             let payload = Payload.example
+            let priority: UInt = 500
 
             it("calls the shh_post JSON-RPC method") {
                 waitUntil { done in
@@ -79,7 +80,8 @@ class ShhSpec: QuickSpec {
                     }
 
                     shh.post(topics: topics,
-                             payload: payload) { _, _ in return }
+                             payload: payload,
+                             priority: priority) { _, _ in return }
                 }
             }
 
@@ -96,7 +98,8 @@ class ShhSpec: QuickSpec {
 
                     shh.post(from: sender,
                              topics: topics,
-                             payload: payload) { _, _ in return }
+                             payload: payload,
+                             priority: priority) { _, _ in return }
                 }
             }
 
@@ -113,7 +116,8 @@ class ShhSpec: QuickSpec {
 
                     shh.post(to: receiver,
                              topics: topics,
-                             payload: payload) { _, _ in return }
+                             payload: payload,
+                             priority: priority) { _, _ in return }
                 }
             }
 
@@ -126,7 +130,8 @@ class ShhSpec: QuickSpec {
                     }
 
                     shh.post(topics: topics,
-                             payload: payload) { _, _ in return }
+                        payload: payload,
+                        priority: priority) { _, _ in return }
                 }
             }
 
@@ -139,7 +144,22 @@ class ShhSpec: QuickSpec {
                     }
 
                     shh.post(topics: topics,
-                             payload: payload) { _, _ in return }
+                             payload: payload,
+                             priority: priority) { _, _ in return }
+                }
+            }
+
+            it("adds the priority") {
+                waitUntil { done in
+                    self.interceptJSONRequests(to: url) { json in
+                        let jsonPriority = json?["params"][0]["priority"]
+                        expect(jsonPriority) == JSON(priority.asHexString)
+                        done()
+                    }
+
+                    shh.post(topics: topics,
+                             payload: payload,
+                             priority: priority) { _, _ in return }
                 }
             }
         }

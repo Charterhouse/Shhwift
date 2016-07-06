@@ -36,6 +36,9 @@
 		5CDF7BF11D2D4E1400C2B789 /* PayloadSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CDF7BF01D2D4E1400C2B789 /* PayloadSpec.swift */; };
 		5CDF7BF31D2D4EA700C2B789 /* Payload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CDF7BF21D2D4EA700C2B789 /* Payload.swift */; };
 		5CDF7BF51D2D4F5500C2B789 /* PayloadExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CDF7BF41D2D4F5500C2B789 /* PayloadExample.swift */; };
+		5CDF7BF71D2D5B5800C2B789 /* UInt+HexString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CDF7BF61D2D5B5800C2B789 /* UInt+HexString.swift */; };
+		5CDF7BF81D2D5C1E00C2B789 /* UInt+HexString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CDF7BF61D2D5B5800C2B789 /* UInt+HexString.swift */; };
+		5CDF7BFA1D2D5CC600C2B789 /* UInt+HexStringSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CDF7BF91D2D5CC600C2B789 /* UInt+HexStringSpec.swift */; };
 		9BC629DE0D96D25E5C4FAC98 /* Pods_Shhwift_ShhwiftDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23F4FB497CD276B100B873DA /* Pods_Shhwift_ShhwiftDemo.framework */; };
 		C7D7C130504428F244E5387C /* Pods_Shhwift_ShhwiftTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9DD085AA2F60F02D66A3134 /* Pods_Shhwift_ShhwiftTests.framework */; };
 /* End PBXBuildFile section */
@@ -93,6 +96,8 @@
 		5CDF7BF01D2D4E1400C2B789 /* PayloadSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PayloadSpec.swift; sourceTree = "<group>"; };
 		5CDF7BF21D2D4EA700C2B789 /* Payload.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Payload.swift; sourceTree = "<group>"; };
 		5CDF7BF41D2D4F5500C2B789 /* PayloadExample.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PayloadExample.swift; sourceTree = "<group>"; };
+		5CDF7BF61D2D5B5800C2B789 /* UInt+HexString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UInt+HexString.swift"; sourceTree = "<group>"; };
+		5CDF7BF91D2D5CC600C2B789 /* UInt+HexStringSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UInt+HexStringSpec.swift"; sourceTree = "<group>"; };
 		62111D77A49D119F182C9249 /* Pods-Shhwift-ShhwiftDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Shhwift-ShhwiftDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-Shhwift-ShhwiftDemo/Pods-Shhwift-ShhwiftDemo.release.xcconfig"; sourceTree = "<group>"; };
 		BB38F8CB8DDF4846332821FC /* Pods-Shhwift-ShhwiftTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Shhwift-ShhwiftTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Shhwift-ShhwiftTests/Pods-Shhwift-ShhwiftTests.release.xcconfig"; sourceTree = "<group>"; };
 		C4D616F10B642DBBFE9BE573 /* Pods-Shhwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Shhwift.release.xcconfig"; path = "Pods/Target Support Files/Pods-Shhwift/Pods-Shhwift.release.xcconfig"; sourceTree = "<group>"; };
@@ -187,6 +192,7 @@
 				5CDF7BE41D2D401D00C2B789 /* DataContainer.swift */,
 				5CDF7BEA1D2D447700C2B789 /* Topic.swift */,
 				5CDF7BF21D2D4EA700C2B789 /* Payload.swift */,
+				5CDF7BF61D2D5B5800C2B789 /* UInt+HexString.swift */,
 			);
 			path = Shhwift;
 			sourceTree = "<group>";
@@ -207,6 +213,7 @@
 				5CDF7BEC1D2D471200C2B789 /* TopicExample.swift */,
 				5CDF7BF01D2D4E1400C2B789 /* PayloadSpec.swift */,
 				5CDF7BF41D2D4F5500C2B789 /* PayloadExample.swift */,
+				5CDF7BF91D2D5CC600C2B789 /* UInt+HexStringSpec.swift */,
 			);
 			path = ShhwiftTests;
 			sourceTree = "<group>";
@@ -530,6 +537,7 @@
 				5CDE2A641CFF0BFD00D01C16 /* JSON+FailableInit.swift in Sources */,
 				5C1C9D091D0B0B43009B4540 /* JsonRpc.swift in Sources */,
 				5CDF7BEB1D2D447700C2B789 /* Topic.swift in Sources */,
+				5CDF7BF71D2D5B5800C2B789 /* UInt+HexString.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -545,10 +553,12 @@
 				5C9076C81CE4D32C0012AD50 /* ShhSpec.swift in Sources */,
 				5C57F44D1CFF07AB001F3C60 /* NSInputStream+ReadFully.swift in Sources */,
 				5CDF7BED1D2D471200C2B789 /* TopicExample.swift in Sources */,
+				5CDF7BF81D2D5C1E00C2B789 /* UInt+HexString.swift in Sources */,
 				4DEC994A1D1C00AA006F18A5 /* IdentitySpec.swift in Sources */,
 				5CDF7BF51D2D4F5500C2B789 /* PayloadExample.swift in Sources */,
 				5CDF7BE71D2D417E00C2B789 /* DataContainerSpec.swift in Sources */,
 				5C017AE51CFF1DB70081F28F /* JSON+FailableInit.swift in Sources */,
+				5CDF7BFA1D2D5CC600C2B789 /* UInt+HexStringSpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
