@@ -92,6 +92,20 @@ class ShhSpec: QuickSpec {
                     shh.post(from: sender) { _, _ in return }
                 }
             }
+
+            it("adds the receiver") {
+                let receiver = Identity.example
+
+                waitUntil { done in
+
+                    self.interceptJSONRequests(to: url) { json in
+                        expect(json?["params"]) == [["to": receiver.asHexString]]
+                        done()
+                    }
+
+                    shh.post(to: receiver) { _, _ in return }
+                }
+            }
         }
     }
 }
