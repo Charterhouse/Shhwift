@@ -67,6 +67,8 @@ class ShhSpec: QuickSpec {
 
         describe("post") {
 
+            let topics = [Topic.example, Topic.example]
+
             it("calls the shh_post JSON-RPC method") {
                 waitUntil { done in
 
@@ -75,7 +77,7 @@ class ShhSpec: QuickSpec {
                         done()
                     }
 
-                    shh.post { _, _ in return }
+                    shh.post(topics: topics) { _, _ in return }
                 }
             }
 
@@ -85,11 +87,12 @@ class ShhSpec: QuickSpec {
                 waitUntil { done in
 
                     self.interceptJSONRequests(to: url) { json in
-                        expect(json?["params"]) == [["from": sender.asHexString]]
+                        let jsonSender = json?["params"][0]["from"]
+                        expect(jsonSender) == JSON(sender.asHexString)
                         done()
                     }
 
-                    shh.post(from: sender) { _, _ in return }
+                    shh.post(from: sender, topics: topics) { _, _ in return }
                 }
             }
 
@@ -99,11 +102,24 @@ class ShhSpec: QuickSpec {
                 waitUntil { done in
 
                     self.interceptJSONRequests(to: url) { json in
-                        expect(json?["params"]) == [["to": receiver.asHexString]]
+                        let jsonReceiver = json?["params"][0]["to"]
+                        expect(jsonReceiver) == JSON(receiver.asHexString)
                         done()
                     }
 
-                    shh.post(to: receiver) { _, _ in return }
+                    shh.post(to: receiver, topics: topics) { _, _ in return }
+                }
+            }
+
+            it("adds the topics") {
+                waitUntil { done in
+                    self.interceptJSONRequests(to: url) { json in
+                        let jsonTopics = json?["params"][0]["topics"]
+                        expect(jsonTopics) == JSON(topics.map { $0.asHexString })
+                        done()
+                    }
+
+                    shh.post(topics: topics) { _, _ in return }
                 }
             }
         }

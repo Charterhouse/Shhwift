@@ -36,9 +36,10 @@ public struct Shh {
     }
 
     public func post(from sender: Identity? = nil, to receiver: Identity? = nil,
+                          topics: [Topic],
                           callback: PostCallback) {
 
-        var post = [String: String]()
+        var post = [String: AnyObject]()
 
         if let sender = sender {
             post["from"] = sender.asHexString
@@ -47,6 +48,8 @@ public struct Shh {
         if let receiver = receiver {
             post["to"] = receiver.asHexString
         }
+
+        post["topics"] = topics.map { $0.asHexString }
 
         rpc.call(method: "shh_post", parameters: JSON([post])) { _, _ in }
     }
