@@ -28,6 +28,8 @@
 		5C9076C81CE4D32C0012AD50 /* ShhSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9076C71CE4D32C0012AD50 /* ShhSpec.swift */; };
 		5C9076CA1CE4D37B0012AD50 /* Shh.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9076C91CE4D37B0012AD50 /* Shh.swift */; };
 		5CDE2A641CFF0BFD00D01C16 /* JSON+FailableInit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CDE2A631CFF0BFD00D01C16 /* JSON+FailableInit.swift */; };
+		5CDF7BE51D2D401D00C2B789 /* DataContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CDF7BE41D2D401D00C2B789 /* DataContainer.swift */; };
+		5CDF7BE71D2D417E00C2B789 /* DataContainerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CDF7BE61D2D417E00C2B789 /* DataContainerSpec.swift */; };
 		9BC629DE0D96D25E5C4FAC98 /* Pods_Shhwift_ShhwiftDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23F4FB497CD276B100B873DA /* Pods_Shhwift_ShhwiftDemo.framework */; };
 		C7D7C130504428F244E5387C /* Pods_Shhwift_ShhwiftTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9DD085AA2F60F02D66A3134 /* Pods_Shhwift_ShhwiftTests.framework */; };
 /* End PBXBuildFile section */
@@ -77,6 +79,8 @@
 		5C9076C71CE4D32C0012AD50 /* ShhSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShhSpec.swift; sourceTree = "<group>"; };
 		5C9076C91CE4D37B0012AD50 /* Shh.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Shh.swift; sourceTree = "<group>"; };
 		5CDE2A631CFF0BFD00D01C16 /* JSON+FailableInit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "JSON+FailableInit.swift"; sourceTree = "<group>"; };
+		5CDF7BE41D2D401D00C2B789 /* DataContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataContainer.swift; sourceTree = "<group>"; };
+		5CDF7BE61D2D417E00C2B789 /* DataContainerSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataContainerSpec.swift; sourceTree = "<group>"; };
 		62111D77A49D119F182C9249 /* Pods-Shhwift-ShhwiftDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Shhwift-ShhwiftDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-Shhwift-ShhwiftDemo/Pods-Shhwift-ShhwiftDemo.release.xcconfig"; sourceTree = "<group>"; };
 		BB38F8CB8DDF4846332821FC /* Pods-Shhwift-ShhwiftTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Shhwift-ShhwiftTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Shhwift-ShhwiftTests/Pods-Shhwift-ShhwiftTests.release.xcconfig"; sourceTree = "<group>"; };
 		C4D616F10B642DBBFE9BE573 /* Pods-Shhwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Shhwift.release.xcconfig"; path = "Pods/Target Support Files/Pods-Shhwift/Pods-Shhwift.release.xcconfig"; sourceTree = "<group>"; };
@@ -168,6 +172,7 @@
 				5C0E9B6D1D083C8000CA98DC /* Errors.swift */,
 				5C1C9D081D0B0B43009B4540 /* JsonRpc.swift */,
 				4DEC994B1D1C594C006F18A5 /* Identity.swift */,
+				5CDF7BE41D2D401D00C2B789 /* DataContainer.swift */,
 			);
 			path = Shhwift;
 			sourceTree = "<group>";
@@ -183,6 +188,7 @@
 				4DEC99471D182F96006F18A5 /* JsonRpcSpec.swift */,
 				4DEC99491D1C00AA006F18A5 /* IdentitySpec.swift */,
 				4DEC994D1D1C59D0006F18A5 /* IdentityExample.swift */,
+				5CDF7BE61D2D417E00C2B789 /* DataContainerSpec.swift */,
 			);
 			path = ShhwiftTests;
 			sourceTree = "<group>";
@@ -499,6 +505,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5C9076CA1CE4D37B0012AD50 /* Shh.swift in Sources */,
+				5CDF7BE51D2D401D00C2B789 /* DataContainer.swift in Sources */,
 				5C0E9B6E1D083C8000CA98DC /* Errors.swift in Sources */,
 				4DEC994C1D1C594C006F18A5 /* Identity.swift in Sources */,
 				5CDE2A641CFF0BFD00D01C16 /* JSON+FailableInit.swift in Sources */,
@@ -516,6 +523,7 @@
 				5C9076C81CE4D32C0012AD50 /* ShhSpec.swift in Sources */,
 				5C57F44D1CFF07AB001F3C60 /* NSInputStream+ReadFully.swift in Sources */,
 				4DEC994A1D1C00AA006F18A5 /* IdentitySpec.swift in Sources */,
+				5CDF7BE71D2D417E00C2B789 /* DataContainerSpec.swift in Sources */,
 				5C017AE51CFF1DB70081F28F /* JSON+FailableInit.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
