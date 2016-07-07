@@ -20,7 +20,7 @@ class ShhSpec: QuickSpec {
                 waitUntil { done in
 
                     self.interceptJSONRequests(to: url) { json in
-                        expect(json?["method"]).to(equal("shh_version"))
+                        expect(json?["method"]) == "shh_version"
                         done()
                     }
 
@@ -33,7 +33,7 @@ class ShhSpec: QuickSpec {
 
                 waitUntil { done in
                     shh.version { version, _ in
-                        expect(version).to(equal("42.0"))
+                        expect(version) == "42.0"
                         done()
                     }
                 }
