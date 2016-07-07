@@ -79,15 +79,19 @@ class ShhSpec: QuickSpec {
                 timeToLive: timeToLive
             )
 
-            it("calls the shh_post JSON-RPC method") {
+            func checkJsonRpcCall(for post: Post, check: (JSON?) -> ()) {
                 waitUntil { done in
-
                     self.interceptJSONRequests(to: url) { json in
-                        expect(json?["method"]).to(equal("shh_post"))
+                        check(json)
                         done()
                     }
-
                     shh.post(post) { _, _ in return }
+                }
+            }
+
+            it("calls the shh_post JSON-RPC method") {
+                checkJsonRpcCall(for: post) { json in
+                    expect(json?["method"]) == "shh_post"
                 }
             }
 
@@ -102,15 +106,9 @@ class ShhSpec: QuickSpec {
                     timeToLive: timeToLive
                 )
 
-                waitUntil { done in
-
-                    self.interceptJSONRequests(to: url) { json in
-                        let jsonSender = json?["params"][0]["from"]
-                        expect(jsonSender) == JSON(sender.asHexString)
-                        done()
-                    }
-
-                    shh.post(postWithSender) { _, _ in return }
+                checkJsonRpcCall(for: postWithSender) { json in
+                    let jsonSender = json?["params"][0]["from"]
+                    expect(jsonSender) == JSON(sender.asHexString)
                 }
             }
 
@@ -125,63 +123,37 @@ class ShhSpec: QuickSpec {
                     timeToLive: timeToLive
                 )
 
-                waitUntil { done in
-
-                    self.interceptJSONRequests(to: url) { json in
-                        let jsonReceiver = json?["params"][0]["to"]
-                        expect(jsonReceiver) == JSON(receiver.asHexString)
-                        done()
-                    }
-
-                    shh.post(postWithReceiver) { _, _ in return }
+                checkJsonRpcCall(for: postWithReceiver) { json in
+                    let jsonSender = json?["params"][0]["to"]
+                    expect(jsonSender) == JSON(receiver.asHexString)
                 }
             }
 
             it("adds the topics") {
-                waitUntil { done in
-                    self.interceptJSONRequests(to: url) { json in
-                        let jsonTopics = json?["params"][0]["topics"]
-                        expect(jsonTopics) == JSON(topics.map { $0.asHexString })
-                        done()
-                    }
-
-                    shh.post(post) { _, _ in return }
+                checkJsonRpcCall(for: post) { json in
+                    let jsonTopics = json?["params"][0]["topics"]
+                    expect(jsonTopics) == JSON(topics.map { $0.asHexString })
                 }
             }
 
             it("adds the payload") {
-                waitUntil { done in
-                    self.interceptJSONRequests(to: url) { json in
-                        let jsonPayload = json?["params"][0]["payload"]
-                        expect(jsonPayload) == JSON(payload.asHexString)
-                        done()
-                    }
-
-                    shh.post(post) { _, _ in return }
+                checkJsonRpcCall(for: post) { json in
+                    let jsonPayload = json?["params"][0]["payload"]
+                    expect(jsonPayload) == JSON(payload.asHexString)
                 }
             }
 
             it("adds the priority") {
-                waitUntil { done in
-                    self.interceptJSONRequests(to: url) { json in
-                        let jsonPriority = json?["params"][0]["priority"]
-                        expect(jsonPriority) == JSON(priority.asHexString)
-                        done()
-                    }
-
-                    shh.post(post) { _, _ in return }
+                checkJsonRpcCall(for: post) { json in
+                    let jsonPriority = json?["params"][0]["priority"]
+                    expect(jsonPriority) == JSON(priority.asHexString)
                 }
             }
 
             it("adds the time to live") {
-                waitUntil { done in
-                    self.interceptJSONRequests(to: url) { json in
-                        let jsonTimeToLive = json?["params"][0]["ttl"]
-                        expect(jsonTimeToLive) == JSON(timeToLive.asHexString)
-                        done()
-                    }
-
-                    shh.post(post) { _, _ in return }
+                checkJsonRpcCall(for: post) { json in
+                    let jsonTimeToLive = json?["params"][0]["ttl"]
+                    expect(jsonTimeToLive) == JSON(timeToLive.asHexString)
                 }
             }
 
