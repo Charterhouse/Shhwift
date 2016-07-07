@@ -11,27 +11,27 @@ public struct Shh {
 
     public func version(callback: VersionCallback) {
 
-        func failure(error: ShhError) {
+        func failed(error: ShhError) {
             callback(version: nil, error: error)
         }
 
-        func success(version: String) {
+        func succeeded(version: String) {
             callback(version: version, error: nil)
         }
 
         rpc.call(method: "shh_version") { result, error in
 
             if let error = error {
-                failure(.JsonRpcFailed(cause: error))
+                failed(.JsonRpcFailed(cause: error))
                 return
             }
 
             guard let version = result?.string else {
-                failure(.ShhFailed(message: "Result is not a string"))
+                failed(.ShhFailed(message: "Result is not a string"))
                 return
             }
 
-            success(version)
+            succeeded(version)
         }
     }
 
@@ -40,26 +40,65 @@ public struct Shh {
                      topics: [Topic],
                      payload: Payload,
                      priority: MillisecondsOfProcessingTime,
+                     timeToLive: Seconds,
                      callback: PostCallback) {
 
-        var post = [String: AnyObject]()
+        func failed(error: ShhError) {
+            callback(success: nil, error: error)
+        }
 
+        func succeeded(success: Bool?) {
+            callback(success: success, error: nil)
+        }
+
+        let post = createPost(
+            from: sender,
+            to: receiver,
+            topics: topics,
+            payload: payload,
+            priority: priority,
+            timeToLive: timeToLive
+        )
+
+        rpc.call(method: "shh_post", parameters: JSON([post])) { result, error in
+            if let error = error {
+                failed(.JsonRpcFailed(cause: error))
+                return
+            }
+
+            guard let success = result?.bool else {
+                failed(.ShhFailed(message: "Result is not a boolean"))
+                return
+            }
+
+            succeeded(success)
+        }
+    }
+
+    private func createPost(from sender: Identity? = nil,
+                            to receiver: Identity? = nil,
+                            topics: [Topic],
+                            payload: Payload,
+                            priority: MillisecondsOfProcessingTime,
+                            timeToLive: Seconds) -> [String: AnyObject] {
+
+        var post = [String: AnyObject]()
         if let sender = sender {
             post["from"] = sender.asHexString
         }
-
         if let receiver = receiver {
             post["to"] = receiver.asHexString
         }
-
         post["topics"] = topics.map { $0.asHexString }
         post["payload"] = payload.asHexString
         post["priority"] = priority.asHexString
+        post["ttl"] = timeToLive.asHexString
 
-        rpc.call(method: "shh_post", parameters: JSON([post])) { _, _ in }
+        return post
     }
 
     public typealias VersionCallback = (version: String?, error: ShhError?)->()
     public typealias PostCallback = (success: Bool?, error: ShhError?) -> ()
     public typealias MillisecondsOfProcessingTime = UInt
+    public typealias Seconds = UInt
 }
