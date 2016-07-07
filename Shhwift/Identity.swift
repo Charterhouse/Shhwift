@@ -14,3 +14,8 @@ public struct Identity: DataContainer {
         return data
     }
 }
+
+extension Identity: Equatable {}
+public func == (lhs: Identity, rhs: Identity) -> Bool {
+    return lhs.data == rhs.data
+}
