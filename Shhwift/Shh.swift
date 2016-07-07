@@ -35,13 +35,7 @@ public struct Shh {
         }
     }
 
-    public func post(from sender: Identity? = nil,
-                     to receiver: Identity? = nil,
-                     topics: [Topic],
-                     payload: Payload,
-                     priority: MillisecondsOfProcessingTime,
-                     timeToLive: Seconds,
-                     callback: PostCallback) {
+    public func post(post: Post, callback: PostCallback) {
 
         func failed(error: ShhError) {
             callback(success: nil, error: error)
@@ -51,16 +45,10 @@ public struct Shh {
             callback(success: success, error: nil)
         }
 
-        let post = createPost(
-            from: sender,
-            to: receiver,
-            topics: topics,
-            payload: payload,
-            priority: priority,
-            timeToLive: timeToLive
-        )
+        let parameters = JSON([post.asDictionary])
 
-        rpc.call(method: "shh_post", parameters: JSON([post])) { result, error in
+        rpc.call(method: "shh_post", parameters: parameters) { result, error in
+
             if let error = error {
                 failed(.JsonRpcFailed(cause: error))
                 return
@@ -75,30 +63,28 @@ public struct Shh {
         }
     }
 
-    private func createPost(from sender: Identity? = nil,
-                            to receiver: Identity? = nil,
-                            topics: [Topic],
-                            payload: Payload,
-                            priority: MillisecondsOfProcessingTime,
-                            timeToLive: Seconds) -> [String: AnyObject] {
-
-        var post = [String: AnyObject]()
-        if let sender = sender {
-            post["from"] = sender.asHexString
-        }
-        if let receiver = receiver {
-            post["to"] = receiver.asHexString
-        }
-        post["topics"] = topics.map { $0.asHexString }
-        post["payload"] = payload.asHexString
-        post["priority"] = priority.asHexString
-        post["ttl"] = timeToLive.asHexString
-
-        return post
-    }
-
     public typealias VersionCallback = (version: String?, error: ShhError?)->()
     public typealias PostCallback = (success: Bool?, error: ShhError?) -> ()
-    public typealias MillisecondsOfProcessingTime = UInt
-    public typealias Seconds = UInt
+}
+
+private extension Post {
+    var asDictionary: [String: AnyObject] {
+
+        var result = [String: AnyObject]()
+
+        if let sender = sender {
+            result["from"] = sender.asHexString
+        }
+
+        if let receiver = receiver {
+            result["to"] = receiver.asHexString
+        }
+
+        result["topics"] = topics.map { $0.asHexString }
+        result["payload"] = payload.asHexString
+        result["priority"] = priority.asHexString
+        result["ttl"] = timeToLive.asHexString
+
+        return result
+    }
 }

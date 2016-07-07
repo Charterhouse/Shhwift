@@ -69,8 +69,15 @@ class ShhSpec: QuickSpec {
 
             let topics = [Topic.example, Topic.example]
             let payload = Payload.example
-            let priority: Shh.MillisecondsOfProcessingTime = 500
-            let timeToLive: Shh.Seconds = 600
+            let priority: Post.MillisecondsOfProcessingTime = 500
+            let timeToLive: Post.Seconds = 600
+
+            let post = Post(
+                topics: topics,
+                payload: payload,
+                priority: priority,
+                timeToLive: timeToLive
+            )
 
             it("calls the shh_post JSON-RPC method") {
                 waitUntil { done in
@@ -80,15 +87,20 @@ class ShhSpec: QuickSpec {
                         done()
                     }
 
-                    shh.post(topics: topics,
-                             payload: payload,
-                             priority: priority,
-                             timeToLive: timeToLive) { _, _ in return }
+                    shh.post(post) { _, _ in return }
                 }
             }
 
             it("adds the sender") {
                 let sender = Identity.example
+
+                let postWithSender = Post(
+                    from: sender,
+                    topics: topics,
+                    payload: payload,
+                    priority: priority,
+                    timeToLive: timeToLive
+                )
 
                 waitUntil { done in
 
@@ -98,16 +110,20 @@ class ShhSpec: QuickSpec {
                         done()
                     }
 
-                    shh.post(from: sender,
-                             topics: topics,
-                             payload: payload,
-                             priority: priority,
-                             timeToLive: timeToLive) { _, _ in return }
+                    shh.post(postWithSender) { _, _ in return }
                 }
             }
 
             it("adds the receiver") {
                 let receiver = Identity.example
+
+                let postWithReceiver = Post(
+                    to: receiver,
+                    topics: topics,
+                    payload: payload,
+                    priority: priority,
+                    timeToLive: timeToLive
+                )
 
                 waitUntil { done in
 
@@ -117,11 +133,7 @@ class ShhSpec: QuickSpec {
                         done()
                     }
 
-                    shh.post(to: receiver,
-                             topics: topics,
-                             payload: payload,
-                             priority: priority,
-                             timeToLive: timeToLive) { _, _ in return }
+                    shh.post(postWithReceiver) { _, _ in return }
                 }
             }
 
@@ -133,10 +145,7 @@ class ShhSpec: QuickSpec {
                         done()
                     }
 
-                    shh.post(topics: topics,
-                        payload: payload,
-                        priority: priority,
-                        timeToLive: timeToLive) { _, _ in return }
+                    shh.post(post) { _, _ in return }
                 }
             }
 
@@ -148,10 +157,7 @@ class ShhSpec: QuickSpec {
                         done()
                     }
 
-                    shh.post(topics: topics,
-                             payload: payload,
-                             priority: priority,
-                             timeToLive: timeToLive) { _, _ in return }
+                    shh.post(post) { _, _ in return }
                 }
             }
 
@@ -163,10 +169,7 @@ class ShhSpec: QuickSpec {
                         done()
                     }
 
-                    shh.post(topics: topics,
-                             payload: payload,
-                             priority: priority,
-                             timeToLive: timeToLive) { _, _ in return }
+                    shh.post(post) { _, _ in return }
                 }
             }
 
@@ -178,10 +181,7 @@ class ShhSpec: QuickSpec {
                         done()
                     }
 
-                    shh.post(topics: topics,
-                             payload: payload,
-                             priority: priority,
-                             timeToLive: timeToLive) { _, _ in return }
+                    shh.post(post) { _, _ in return }
                 }
             }
 
@@ -189,10 +189,7 @@ class ShhSpec: QuickSpec {
                 self.stubRequests(to: url, result: json(["result": true]))
 
                 waitUntil { done in
-                    shh.post(topics: topics,
-                             payload: payload,
-                             priority: priority,
-                             timeToLive: timeToLive) { success, _ in
+                    shh.post(post) { success, _ in
 
                         expect(success) == true
                         done()
@@ -204,10 +201,7 @@ class ShhSpec: QuickSpec {
                 self.stubRequests(to: url, result: http(404))
 
                 waitUntil { done in
-                    shh.post(topics: topics,
-                             payload: payload,
-                             priority: priority,
-                             timeToLive: timeToLive) { _, error in
+                    shh.post(post) { _, error in
 
                         expect(error).toNot(beNil())
                         done()
@@ -219,10 +213,7 @@ class ShhSpec: QuickSpec {
                 self.stubRequests(to: url, result: json([]))
 
                 waitUntil { done in
-                    shh.post(topics: topics,
-                             payload: payload,
-                             priority: priority,
-                             timeToLive: timeToLive) { _, error in
+                    shh.post(post) { _, error in
 
                         let expectedError = ShhError.ShhFailed(
                             message: "Result is not a boolean"

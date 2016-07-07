@@ -15,6 +15,7 @@
 		5C017AE51CFF1DB70081F28F /* JSON+FailableInit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CDE2A631CFF0BFD00D01C16 /* JSON+FailableInit.swift */; };
 		5C0E9B6E1D083C8000CA98DC /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C0E9B6D1D083C8000CA98DC /* Errors.swift */; };
 		5C1C9D091D0B0B43009B4540 /* JsonRpc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C1C9D081D0B0B43009B4540 /* JsonRpc.swift */; };
+		5C2916CC1D2E4472009B83A7 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C2916CB1D2E4472009B83A7 /* Post.swift */; };
 		5C2F9D5B1CE4CFB200C3F263 /* Shhwift.h in Headers */ = {isa = PBXBuildFile; fileRef = 5C2F9D5A1CE4CFB200C3F263 /* Shhwift.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5C2F9D621CE4CFB200C3F263 /* Shhwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C2F9D571CE4CFB200C3F263 /* Shhwift.framework */; };
 		5C57F44D1CFF07AB001F3C60 /* NSInputStream+ReadFully.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C57F44C1CFF07AB001F3C60 /* NSInputStream+ReadFully.swift */; };
@@ -70,6 +71,7 @@
 		4DEC994D1D1C59D0006F18A5 /* IdentityExample.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IdentityExample.swift; sourceTree = "<group>"; };
 		5C0E9B6D1D083C8000CA98DC /* Errors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Errors.swift; sourceTree = "<group>"; };
 		5C1C9D081D0B0B43009B4540 /* JsonRpc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JsonRpc.swift; sourceTree = "<group>"; };
+		5C2916CB1D2E4472009B83A7 /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		5C2F9D571CE4CFB200C3F263 /* Shhwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Shhwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C2F9D5A1CE4CFB200C3F263 /* Shhwift.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Shhwift.h; sourceTree = "<group>"; };
 		5C2F9D5C1CE4CFB200C3F263 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -193,6 +195,7 @@
 				5CDF7BEA1D2D447700C2B789 /* Topic.swift */,
 				5CDF7BF21D2D4EA700C2B789 /* Payload.swift */,
 				5CDF7BF61D2D5B5800C2B789 /* UInt+HexString.swift */,
+				5C2916CB1D2E4472009B83A7 /* Post.swift */,
 			);
 			path = Shhwift;
 			sourceTree = "<group>";
@@ -538,6 +541,7 @@
 				5C1C9D091D0B0B43009B4540 /* JsonRpc.swift in Sources */,
 				5CDF7BEB1D2D447700C2B789 /* Topic.swift in Sources */,
 				5CDF7BF71D2D5B5800C2B789 /* UInt+HexString.swift in Sources */,
+				5C2916CC1D2E4472009B83A7 /* Post.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
