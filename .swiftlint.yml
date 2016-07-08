@@ -1,2 +1,5 @@
 excluded:
   - Pods
+variable_name:
+  excluded:
+    - id

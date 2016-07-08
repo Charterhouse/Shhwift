@@ -18,6 +18,8 @@
 		5C2916CC1D2E4472009B83A7 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C2916CB1D2E4472009B83A7 /* Post.swift */; };
 		5C2F9D5B1CE4CFB200C3F263 /* Shhwift.h in Headers */ = {isa = PBXBuildFile; fileRef = 5C2F9D5A1CE4CFB200C3F263 /* Shhwift.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5C2F9D621CE4CFB200C3F263 /* Shhwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C2F9D571CE4CFB200C3F263 /* Shhwift.framework */; };
+		5C3E688E1D2FA6950056CECE /* Filter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C3E688D1D2FA6950056CECE /* Filter.swift */; };
+		5C3E68901D2FB15F0056CECE /* FilterExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C3E688F1D2FB15F0056CECE /* FilterExample.swift */; };
 		5C57F44D1CFF07AB001F3C60 /* NSInputStream+ReadFully.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C57F44C1CFF07AB001F3C60 /* NSInputStream+ReadFully.swift */; };
 		5C7752FD1D00857C00C017F8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C7752FC1D00857C00C017F8 /* AppDelegate.swift */; };
 		5C7752FF1D00857C00C017F8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C7752FE1D00857C00C017F8 /* ViewController.swift */; };
@@ -77,6 +79,8 @@
 		5C2F9D5C1CE4CFB200C3F263 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5C2F9D611CE4CFB200C3F263 /* ShhwiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ShhwiftTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C2F9D681CE4CFB200C3F263 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5C3E688D1D2FA6950056CECE /* Filter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Filter.swift; sourceTree = "<group>"; };
+		5C3E688F1D2FB15F0056CECE /* FilterExample.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterExample.swift; sourceTree = "<group>"; };
 		5C57F44C1CFF07AB001F3C60 /* NSInputStream+ReadFully.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSInputStream+ReadFully.swift"; sourceTree = "<group>"; };
 		5C7752FA1D00857B00C017F8 /* ShhwiftDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShhwiftDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C7752FC1D00857C00C017F8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -196,6 +200,7 @@
 				5CDF7BF21D2D4EA700C2B789 /* Payload.swift */,
 				5CDF7BF61D2D5B5800C2B789 /* UInt+HexString.swift */,
 				5C2916CB1D2E4472009B83A7 /* Post.swift */,
+				5C3E688D1D2FA6950056CECE /* Filter.swift */,
 			);
 			path = Shhwift;
 			sourceTree = "<group>";
@@ -217,6 +222,7 @@
 				5CDF7BF01D2D4E1400C2B789 /* PayloadSpec.swift */,
 				5CDF7BF41D2D4F5500C2B789 /* PayloadExample.swift */,
 				5CDF7BF91D2D5CC600C2B789 /* UInt+HexStringSpec.swift */,
+				5C3E688F1D2FB15F0056CECE /* FilterExample.swift */,
 			);
 			path = ShhwiftTests;
 			sourceTree = "<group>";
@@ -534,6 +540,7 @@
 			files = (
 				5C9076CA1CE4D37B0012AD50 /* Shh.swift in Sources */,
 				5CDF7BE51D2D401D00C2B789 /* DataContainer.swift in Sources */,
+				5C3E688E1D2FA6950056CECE /* Filter.swift in Sources */,
 				5CDF7BF31D2D4EA700C2B789 /* Payload.swift in Sources */,
 				5C0E9B6E1D083C8000CA98DC /* Errors.swift in Sources */,
 				4DEC994C1D1C594C006F18A5 /* Identity.swift in Sources */,
@@ -553,6 +560,7 @@
 				5CDF7BE91D2D43DF00C2B789 /* TopicSpec.swift in Sources */,
 				4DEC99481D182F96006F18A5 /* JsonRpcSpec.swift in Sources */,
 				4DEC994E1D1C59D0006F18A5 /* IdentityExample.swift in Sources */,
+				5C3E68901D2FB15F0056CECE /* FilterExample.swift in Sources */,
 				5C7B5EE11CF0E58600F622EE /* HttpMocking.swift in Sources */,
 				5C9076C81CE4D32C0012AD50 /* ShhSpec.swift in Sources */,
 				5C57F44D1CFF07AB001F3C60 /* NSInputStream+ReadFully.swift in Sources */,
