@@ -14,3 +14,8 @@ public struct Topic: DataContainer {
         return data
     }
 }
+
+extension Topic: Equatable {}
+public func == (lhs: Topic, rhs: Topic) -> Bool {
+    return lhs.data == rhs.data
+}

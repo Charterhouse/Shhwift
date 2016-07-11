@@ -10,3 +10,8 @@ public struct Payload: DataContainer {
         return data
     }
 }
+
+extension Payload: Equatable {}
+public func == (lhs: Payload, rhs: Payload) -> Bool {
+    return lhs.data == rhs.data
+}
