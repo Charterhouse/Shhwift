@@ -39,6 +39,8 @@
 		5C9076CA1CE4D37B0012AD50 /* Shh.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9076C91CE4D37B0012AD50 /* Shh.swift */; };
 		5CC205AD1D2FFA6D00C07C4F /* MessageSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC205AC1D2FFA6D00C07C4F /* MessageSpec.swift */; };
 		5CC205AF1D2FFCA900C07C4F /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC205AE1D2FFCA900C07C4F /* Message.swift */; };
+		5CC205A91D2FE4B800C07C4F /* ShhGetFilterChangesSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC205A81D2FE4B800C07C4F /* ShhGetFilterChangesSpec.swift */; };
+		5CC205AB1D2FE54E00C07C4F /* ShhGetFilterChanges.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC205AA1D2FE54E00C07C4F /* ShhGetFilterChanges.swift */; };
 		5CDE2A641CFF0BFD00D01C16 /* JSON+FailableInit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CDE2A631CFF0BFD00D01C16 /* JSON+FailableInit.swift */; };
 		5CDF7BE51D2D401D00C2B789 /* DataContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CDF7BE41D2D401D00C2B789 /* DataContainer.swift */; };
 		5CDF7BE71D2D417E00C2B789 /* DataContainerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CDF7BE61D2D417E00C2B789 /* DataContainerSpec.swift */; };
@@ -111,6 +113,8 @@
 		5C9076C91CE4D37B0012AD50 /* Shh.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Shh.swift; sourceTree = "<group>"; };
 		5CC205AC1D2FFA6D00C07C4F /* MessageSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageSpec.swift; sourceTree = "<group>"; };
 		5CC205AE1D2FFCA900C07C4F /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		5CC205A81D2FE4B800C07C4F /* ShhGetFilterChangesSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShhGetFilterChangesSpec.swift; sourceTree = "<group>"; };
+		5CC205AA1D2FE54E00C07C4F /* ShhGetFilterChanges.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShhGetFilterChanges.swift; sourceTree = "<group>"; };
 		5CDE2A631CFF0BFD00D01C16 /* JSON+FailableInit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "JSON+FailableInit.swift"; sourceTree = "<group>"; };
 		5CDF7BE41D2D401D00C2B789 /* DataContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataContainer.swift; sourceTree = "<group>"; };
 		5CDF7BE61D2D417E00C2B789 /* DataContainerSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataContainerSpec.swift; sourceTree = "<group>"; };
@@ -262,6 +266,7 @@
 				5C3E68971D2FDE9D0056CECE /* ShhPost.swift */,
 				5C3E68991D2FDF0F0056CECE /* ShhNewIdentity.swift */,
 				5C3E689B1D2FDF580056CECE /* ShhNewFilter.swift */,
+				5CC205AA1D2FE54E00C07C4F /* ShhGetFilterChanges.swift */,
 			);
 			name = Calls;
 			sourceTree = "<group>";
@@ -282,6 +287,7 @@
 				5C3E68A41D2FE2C80056CECE /* ShhPostSpec.swift */,
 				5C3E68A61D2FE3160056CECE /* ShhNewIdentitySpec.swift */,
 				5C9076C71CE4D32C0012AD50 /* ShhNewFilterSpec.swift */,
+				5CC205A81D2FE4B800C07C4F /* ShhGetFilterChangesSpec.swift */,
 			);
 			name = Calls;
 			sourceTree = "<group>";
@@ -603,6 +609,7 @@
 				5C3E688E1D2FA6950056CECE /* Filter.swift in Sources */,
 				5C3E689A1D2FDF0F0056CECE /* ShhNewIdentity.swift in Sources */,
 				5CDF7BF31D2D4EA700C2B789 /* Payload.swift in Sources */,
+				5CC205AB1D2FE54E00C07C4F /* ShhGetFilterChanges.swift in Sources */,
 				5C0E9B6E1D083C8000CA98DC /* Errors.swift in Sources */,
 				4DEC994C1D1C594C006F18A5 /* Identity.swift in Sources */,
 				5CDE2A641CFF0BFD00D01C16 /* JSON+FailableInit.swift in Sources */,
@@ -639,6 +646,7 @@
 				5CDF7BE71D2D417E00C2B789 /* DataContainerSpec.swift in Sources */,
 				5C017AE51CFF1DB70081F28F /* JSON+FailableInit.swift in Sources */,
 				5CDF7BFA1D2D5CC600C2B789 /* UInt+HexStringSpec.swift in Sources */,
+				5CC205A91D2FE4B800C07C4F /* ShhGetFilterChangesSpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
