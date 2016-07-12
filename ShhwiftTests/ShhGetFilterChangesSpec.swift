@@ -61,7 +61,6 @@ class ShhGetFilterChangesSpec: QuickSpec {
                 waitUntil { done in
                     shh.getFilterChanges(someFilter) { messages, _ in
                         expect(messages?.count) == 1
-                        expect(messages?[0].topics) == topics
                         expect(messages?[0].payload) == payload
                         done()
                     }
