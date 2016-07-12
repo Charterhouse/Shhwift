@@ -3,7 +3,7 @@ public struct Identity: DataContainer {
     private let data: NSData
 
     public init?(_ data: NSData) {
-        guard data.length == 60 else {
+        guard data.length == 65 else {
             return nil
         }
 

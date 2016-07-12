@@ -5,11 +5,11 @@ import Shhwift
 class IdentitySpec: QuickSpec {
     override func spec() {
 
-        let sixtyBytes = [UInt8](count: 60, repeatedValue: 42)
-        let sixtyBytesData = NSData(bytes: sixtyBytes, length: sixtyBytes.count)
+        let sixtyFiveBytes = [UInt8](count: 65, repeatedValue: 42)
+        let sixtyFiveBytesData = NSData(bytes: sixtyFiveBytes, length: sixtyFiveBytes.count)
 
-        it("can be constructed with 60 bytes data") {
-            expect(Identity(sixtyBytesData)).toNot(beNil())
+        it("can be constructed with 65 bytes data") {
+            expect(Identity(sixtyFiveBytesData)).toNot(beNil())
         }
 
         it("cannot be constructed with data of different length") {
@@ -19,11 +19,11 @@ class IdentitySpec: QuickSpec {
         }
 
         it("can be converted to data") {
-            expect(Identity(sixtyBytesData)?.asData) == sixtyBytesData
+            expect(Identity(sixtyFiveBytesData)?.asData) == sixtyFiveBytesData
         }
 
         it("implements the DataContainer protocol") {
-            expect(Identity(sixtyBytesData) as? DataContainer).toNot(beNil())
+            expect(Identity(sixtyFiveBytesData) as? DataContainer).toNot(beNil())
         }
     }
 }

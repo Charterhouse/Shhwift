@@ -6,7 +6,7 @@ import NSData_FastHex
 class DataContainerSpec: QuickSpec {
     override func spec() {
 
-        let bytes = [UInt8](count: 60, repeatedValue: 42)
+        let bytes = [UInt8](count: 65, repeatedValue: 42)
         let data = NSData(bytes: bytes, length: bytes.count)
         let hexString = "0x" + data.hexStringRepresentation()
 
@@ -28,7 +28,7 @@ class DataContainerSpec: QuickSpec {
         }
 
         it("cannot be constructed with string containing non-hex characters") {
-            let invalidString = "0x" + String(count: 60, repeatedValue:Character("Z"))
+            let invalidString = "0x" + String(count: 65, repeatedValue:Character("Z"))
             expect(Identity(invalidString)).to(beNil())
         }
 
