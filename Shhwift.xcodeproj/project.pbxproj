@@ -28,19 +28,20 @@
 		5C3E68A51D2FE2C80056CECE /* ShhPostSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C3E68A41D2FE2C80056CECE /* ShhPostSpec.swift */; };
 		5C3E68A71D2FE3160056CECE /* ShhNewIdentitySpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C3E68A61D2FE3160056CECE /* ShhNewIdentitySpec.swift */; };
 		5C57F44D1CFF07AB001F3C60 /* NSInputStream+ReadFully.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C57F44C1CFF07AB001F3C60 /* NSInputStream+ReadFully.swift */; };
+		5C6C9C4E1D36665800CD1C3E /* Shhwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C2F9D571CE4CFB200C3F263 /* Shhwift.framework */; };
+		5C6C9C4F1D36665800CD1C3E /* Shhwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5C2F9D571CE4CFB200C3F263 /* Shhwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5C7752FD1D00857C00C017F8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C7752FC1D00857C00C017F8 /* AppDelegate.swift */; };
 		5C7752FF1D00857C00C017F8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C7752FE1D00857C00C017F8 /* ViewController.swift */; };
 		5C7753021D00857C00C017F8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C7753001D00857C00C017F8 /* Main.storyboard */; };
 		5C7753041D00857C00C017F8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5C7753031D00857C00C017F8 /* Assets.xcassets */; };
 		5C7753071D00857C00C017F8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C7753051D00857C00C017F8 /* LaunchScreen.storyboard */; };
-		5C77530E1D00858900C017F8 /* Shhwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C2F9D571CE4CFB200C3F263 /* Shhwift.framework */; };
 		5C7B5EE11CF0E58600F622EE /* HttpMocking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C7B5EE01CF0E58600F622EE /* HttpMocking.swift */; };
 		5C9076C81CE4D32C0012AD50 /* ShhNewFilterSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9076C71CE4D32C0012AD50 /* ShhNewFilterSpec.swift */; };
 		5C9076CA1CE4D37B0012AD50 /* Shh.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9076C91CE4D37B0012AD50 /* Shh.swift */; };
-		5CC205AD1D2FFA6D00C07C4F /* MessageSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC205AC1D2FFA6D00C07C4F /* MessageSpec.swift */; };
-		5CC205AF1D2FFCA900C07C4F /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC205AE1D2FFCA900C07C4F /* Message.swift */; };
 		5CC205A91D2FE4B800C07C4F /* ShhGetFilterChangesSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC205A81D2FE4B800C07C4F /* ShhGetFilterChangesSpec.swift */; };
 		5CC205AB1D2FE54E00C07C4F /* ShhGetFilterChanges.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC205AA1D2FE54E00C07C4F /* ShhGetFilterChanges.swift */; };
+		5CC205AD1D2FFA6D00C07C4F /* MessageSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC205AC1D2FFA6D00C07C4F /* MessageSpec.swift */; };
+		5CC205AF1D2FFCA900C07C4F /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC205AE1D2FFCA900C07C4F /* Message.swift */; };
 		5CDE2A641CFF0BFD00D01C16 /* JSON+FailableInit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CDE2A631CFF0BFD00D01C16 /* JSON+FailableInit.swift */; };
 		5CDF7BE51D2D401D00C2B789 /* DataContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CDF7BE41D2D401D00C2B789 /* DataContainer.swift */; };
 		5CDF7BE71D2D417E00C2B789 /* DataContainerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CDF7BE61D2D417E00C2B789 /* DataContainerSpec.swift */; };
@@ -73,6 +74,20 @@
 			remoteInfo = Shhwift;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		5C6C9C501D36665900CD1C3E /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				5C6C9C4F1D36665800CD1C3E /* Shhwift.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		239DCC781986C450081F3FD2 /* Pods_Shhwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Shhwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -111,10 +126,10 @@
 		5C9076C61CE4D32B0012AD50 /* ShhwiftTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ShhwiftTests-Bridging-Header.h"; sourceTree = "<group>"; };
 		5C9076C71CE4D32C0012AD50 /* ShhNewFilterSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShhNewFilterSpec.swift; sourceTree = "<group>"; };
 		5C9076C91CE4D37B0012AD50 /* Shh.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Shh.swift; sourceTree = "<group>"; };
-		5CC205AC1D2FFA6D00C07C4F /* MessageSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageSpec.swift; sourceTree = "<group>"; };
-		5CC205AE1D2FFCA900C07C4F /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		5CC205A81D2FE4B800C07C4F /* ShhGetFilterChangesSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShhGetFilterChangesSpec.swift; sourceTree = "<group>"; };
 		5CC205AA1D2FE54E00C07C4F /* ShhGetFilterChanges.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShhGetFilterChanges.swift; sourceTree = "<group>"; };
+		5CC205AC1D2FFA6D00C07C4F /* MessageSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageSpec.swift; sourceTree = "<group>"; };
+		5CC205AE1D2FFCA900C07C4F /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		5CDE2A631CFF0BFD00D01C16 /* JSON+FailableInit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "JSON+FailableInit.swift"; sourceTree = "<group>"; };
 		5CDF7BE41D2D401D00C2B789 /* DataContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataContainer.swift; sourceTree = "<group>"; };
 		5CDF7BE61D2D417E00C2B789 /* DataContainerSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataContainerSpec.swift; sourceTree = "<group>"; };
@@ -156,8 +171,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5C77530E1D00858900C017F8 /* Shhwift.framework in Frameworks */,
 				9BC629DE0D96D25E5C4FAC98 /* Pods_Shhwift_ShhwiftDemo.framework in Frameworks */,
+				5C6C9C4E1D36665800CD1C3E /* Shhwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -381,6 +396,7 @@
 				5C7752F81D00857B00C017F8 /* Resources */,
 				E8898CA8EB7A36DFE60FE500 /* [CP] Embed Pods Frameworks */,
 				2EE3A97CFCACC9E94E1C1548 /* [CP] Copy Pods Resources */,
+				5C6C9C501D36665900CD1C3E /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
