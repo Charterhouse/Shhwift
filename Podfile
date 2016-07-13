@@ -12,5 +12,7 @@ target 'Shhwift' do
     pod 'Mockingjay', '~> 1.2.2'
   end
 
-  target 'ShhwiftDemo'
+  target 'ShhwiftDemo' do
+    pod 'Ethereum-iOS-Experimental', '~> 1.4'
+  end
 end

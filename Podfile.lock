@@ -1,5 +1,6 @@
 PODS:
   - Alamofire (3.4.0)
+  - Ethereum-iOS-Experimental (1.4.9)
   - Mockingjay (1.2.2):
     - Mockingjay/Core (= 1.2.2)
     - Mockingjay/XCTest (= 1.2.2)
@@ -15,6 +16,7 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire (~> 3.4)
+  - Ethereum-iOS-Experimental (~> 1.4)
   - Mockingjay (~> 1.2.2)
   - Nimble (~> 4.0)
   - NSData+FastHex (~> 1.0)
@@ -23,6 +25,7 @@ DEPENDENCIES:
 
 SPEC CHECKSUMS:
   Alamofire: c19a627cefd6a95f840401c49ab1f124e07f54ee
+  Ethereum-iOS-Experimental: 4c4d6379855460cf4e278b106d2b15001b73b403
   Mockingjay: 5de65f14108473afc6727e05df9a3ecc9cef8562
   Nimble: 0f3c8b8b084cda391209c3c5efbb48bedeeb920a
   NSData+FastHex: a22ad031ee10a4297d0bf4d20cf03406a4476169
@@ -30,6 +33,6 @@ SPEC CHECKSUMS:
   SwiftyJSON: 04ccea08915aa0109039157c7974cf0298da292a
   URITemplate: 398a48d6559e23b77bd41176b675b017ad1fc959
 
-PODFILE CHECKSUM: dfd01b5c6071f9c3770ec33204cc0204247e7dcb
+PODFILE CHECKSUM: f824bdf9d7847b47c43832eeea4f06dcea41d4c5
 
 COCOAPODS: 1.0.1
