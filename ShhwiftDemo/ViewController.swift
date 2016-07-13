@@ -60,7 +60,7 @@ class ViewController: UIViewController {
             self.entryField.enabled = true
             self.postButton.enabled = true
 
-            self.shh.newFilter(topics: [self.topic!], receiver: id) { filter, error in
+            self.shh.newFilter(topics: [self.topic!]) { filter, error in
                 guard let filter = filter else {
                     print("Failed to set filter")
                     return
@@ -101,7 +101,7 @@ class ViewController: UIViewController {
         self.entryField.enabled = false
 
         let payload = Payload(string: text)
-        let post = Post(from: id, to: id, topics: [topic!],
+        let post = Post(topics: [topic!],
                         payload: payload!,
                         priority: 1000, timeToLive: 100)
         shh.post(post) { ok, error in
