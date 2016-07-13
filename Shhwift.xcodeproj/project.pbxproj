@@ -870,6 +870,7 @@
 			baseConfigurationReference = DAD3B0EA374E1564C5151CFA /* Pods-Shhwift-ShhwiftDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = ShhwiftDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = org.shhwift.ShhwiftDemo;
@@ -882,6 +883,7 @@
 			baseConfigurationReference = 62111D77A49D119F182C9249 /* Pods-Shhwift-ShhwiftDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = ShhwiftDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = org.shhwift.ShhwiftDemo;

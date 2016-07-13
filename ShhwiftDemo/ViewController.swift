@@ -1,4 +1,5 @@
 import UIKit
+import Geth
 import Shhwift
 
 class ViewController: UIViewController {
@@ -18,6 +19,11 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         self.textView.layer.borderColor = UIColor.lightGrayColor().CGColor
         self.textView.layer.borderWidth = 0.5
+
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0)) {
+            signal(SIGPIPE, SIG_IGN)
+            Geth.run("--shh --rpc --rpcapi shh --ipcdisable")
+        }
 
         self.start()
     }
