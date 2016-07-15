@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		02CCD5BD1D38C7C6004AD9F0 /* WhisperSenderReceiver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02CCD5BC1D38C7C6004AD9F0 /* WhisperSenderReceiver.swift */; };
 		1F5051891C2E6F069B0F1632 /* Pods_Shhwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 239DCC781986C450081F3FD2 /* Pods_Shhwift.framework */; };
 		4DEC99481D182F96006F18A5 /* JsonRpcSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DEC99471D182F96006F18A5 /* JsonRpcSpec.swift */; };
 		4DEC994A1D1C00AA006F18A5 /* IdentitySpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DEC99491D1C00AA006F18A5 /* IdentitySpec.swift */; };
@@ -90,6 +91,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		02CCD5BC1D38C7C6004AD9F0 /* WhisperSenderReceiver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WhisperSenderReceiver.swift; sourceTree = "<group>"; };
 		239DCC781986C450081F3FD2 /* Pods_Shhwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Shhwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		23F4FB497CD276B100B873DA /* Pods_Shhwift_ShhwiftDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Shhwift_ShhwiftDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B62318F2F1AF080B250E745 /* Pods-Shhwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Shhwift.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Shhwift/Pods-Shhwift.debug.xcconfig"; sourceTree = "<group>"; };
@@ -316,6 +318,7 @@
 				5C7753031D00857C00C017F8 /* Assets.xcassets */,
 				5C7753051D00857C00C017F8 /* LaunchScreen.storyboard */,
 				5C7753081D00857C00C017F8 /* Info.plist */,
+				02CCD5BC1D38C7C6004AD9F0 /* WhisperSenderReceiver.swift */,
 			);
 			path = ShhwiftDemo;
 			sourceTree = "<group>";
@@ -672,6 +675,7 @@
 			files = (
 				5C7752FF1D00857C00C017F8 /* ViewController.swift in Sources */,
 				5C7752FD1D00857C00C017F8 /* AppDelegate.swift in Sources */,
+				02CCD5BD1D38C7C6004AD9F0 /* WhisperSenderReceiver.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
